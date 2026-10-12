@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Program Gym</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
+<style>
+:root{
+  --bg:#E8EAED; --surface:#F6F7F8; --ink:#1C2026; --muted:#5B636E; --line:#CDD2D8;
+  --accent:#C8323A; --link:#2F5FB3;
+  --display:"Barlow Condensed","Arial Narrow",Arial,sans-serif;
+  --body:"Barlow","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#15181C; --surface:#1E2227; --ink:#E6E8EB; --muted:#9AA3AE; --line:#323840;
+    --accent:#E0555C; --link:#6A95E6;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#15181C; --surface:#1E2227; --ink:#E6E8EB; --muted:#9AA3AE; --line:#323840;
+  --accent:#E0555C; --link:#6A95E6;
+}
+*{box-sizing:border-box}
+html{scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55}
+.top{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+.top-in{max-width:780px;margin:0 auto;padding:10px 16px;display:flex;align-items:center;gap:12px}
+.brand{font-family:var(--display);font-weight:700;font-size:1.4rem;margin-right:auto;white-space:nowrap}
+nav{display:flex;border:2px solid var(--ink);border-radius:6px;overflow:hidden}
+nav button{font:inherit;font-weight:600;color:inherit;background:transparent;border:0;padding:6px 12px;cursor:pointer;white-space:nowrap}
+nav button + button{border-left:2px solid var(--ink)}
+nav button[aria-selected="true"]{background:var(--ink);color:var(--bg)}
+nav button:focus-visible{outline:3px solid var(--link);outline-offset:-3px}
+@media (max-width:440px){.brand{display:none}nav{flex:1}nav button{flex:1;padding:8px 6px}}
+main{max-width:780px;margin:0 auto;padding:24px 16px 72px}
+h1,h2,h3{font-family:var(--display);font-weight:700;line-height:1.1}
+h1{font-size:clamp(2.1rem,8vw,3rem);margin:.2em 0 .4em}
+h2{font-size:1.8rem;margin:1.8em 0 .5em;padding-top:.3em;border-top:3px solid var(--ink)}
+h3{font-size:1.3rem;margin:1.5em 0 .4em}
+a{color:var(--link)}
+p,li{max-width:70ch}
+ul{padding-left:1.2em}
+li{margin:.3em 0}
+code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.9em}
+.tw{overflow-x:auto;background:var(--surface);border:1px solid var(--line);border-radius:8px;margin:.8em 0}
+table{border-collapse:collapse;width:100%;min-width:460px;font-size:.94rem}
+th{text-align:left;font-weight:600;color:var(--muted);font-size:.82rem;padding:8px 10px;border-bottom:1px solid var(--line)}
+td{padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:0}
+td strong{border-left:3px solid var(--accent);padding-left:6px;margin-left:-9px}
+.msg{color:var(--muted);padding:40px 0}
+.foot{color:var(--muted);font-size:.85rem;margin-top:48px}
+</style>
+</head>
+<body>
+<header class="top"><div class="top-in">
+  <span class="brand">Program Gym</span>
+  <nav role="tablist" aria-label="Bagian">
+    <button role="tab" data-f="program" aria-selected="true">Program</button>
+    <button role="tab" data-f="decisions" aria-selected="false">Keputusan</button>
+    <button role="tab" data-f="body" aria-selected="false">Tubuh</button>
+  </nav>
+</div></header>
+<main id="view" role="tabpanel" aria-live="polite"><p class="msg">Memuat…</p></main>
+<script>
+const FILES = {program:"program.md", decisions:"decisions.md", body:"body.md"};
+const cache = {};
+const view = document.getElementById("view");
+
+async function load(key){
+  if (cache[key] !== undefined) return cache[key];
+  try{
+    const r = await fetch(FILES[key] + "?t=" + Date.now(), {cache:"no-store"});
+    cache[key] = r.ok ? await r.text() : null;
+  }catch(e){ cache[key] = null; }
+  return cache[key];
+}
+
+async function show(key){
+  document.querySelectorAll("nav button").forEach(b=>b.setAttribute("aria-selected", String(b.dataset.f===key)));
+  view.innerHTML = '<p class="msg">Memuat…</p>';
+  const md = await load(key);
+  if (md === null){
+    view.innerHTML = `<p class="msg">${FILES[key]} belum ada di repo.</p>`;
+    return;
+  }
+  view.innerHTML = marked.parse(md);
+  view.querySelectorAll("table").forEach(t=>{
+    const w = document.createElement("div"); w.className = "tw";
+    t.parentNode.insertBefore(w, t); w.appendChild(t);
+  });
+  view.querySelectorAll('a[href$=".md"]').forEach(a=>{
+    const k = Object.keys(FILES).find(x=>FILES[x]===a.getAttribute("href"));
+    if (k) a.addEventListener("click", e=>{ e.preventDefault(); go(k); });
+  });
+  const f = document.createElement("p"); f.className = "foot";
+  f.textContent = "Sumber: " + FILES[key] + " di repo. Edit file .md lalu push untuk memperbarui halaman ini.";
+  view.appendChild(f);
+  document.title = "Program Gym · " + document.querySelector(`nav button[data-f="${key}"]`).textContent;
+}
+
+function go(key){
+  if (location.hash !== "#" + key) history.replaceState(null, "", "#" + key);
+  show(key); window.scrollTo(0,0);
+}
+
+document.querySelectorAll("nav button").forEach(b=>b.addEventListener("click", ()=>go(b.dataset.f)));
+const start = location.hash.slice(1);
+show(FILES[start] ? start : "program");
+</script>
+</body>
+</html>
