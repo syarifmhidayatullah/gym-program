@@ -18,6 +18,12 @@ Setelah bulk: cutting 8–10 minggu ke ±67–68 kg di body fat 15–16%, atau m
 - **Sekarang: 2650 kkal/hari mulai Senin, 19 Oktober 2026** (naik dari 2500 setelah scan 10-10: berat turun 0,6 kg dalam 3 minggu). Maintenance ±2400 (TEE scan 2368–2405).
 - **Protein 140–150 g** (±2 g/kg) · **lemak 70–80 g** · **karbohidrat 305–320 g**.
 - Di 2650 kkal: karbohidrat ±350–370 g (protein & lemak tetap). Tambahannya dari nasi, oat, roti, pisang.
+- **Asupan aktual (estimasi 17-10, tanpa hitung kalori): ±2100–2200 kkal, protein ±140 g.** Protein sudah cukup; yang kurang karbohidrat (nasi total ±2,5 centong/hari). Jadi 2500 kkal belum pernah benar-benar tercapai.
+- **Tambahan untuk mencapai ±2650 (sekitar +450–500 kkal):**
+  - Sebelum latihan (05.15–05.30): 1 pisang + 2 lembar roti, atau 3–4 kurma (±250 kkal). Sekalian supaya tidak latihan dengan perut kosong.
+  - Sarapan: nasi jadi 1 centong penuh (+±100 kkal).
+  - Makan malam: tambah ½ centong nasi, atau 1 gelas susu sebelum tidur (+±100–150 kkal).
+- Tidak wajib hitung kalori. Penentunya rata-rata berat pagi mingguan: target +0,2–0,3 kg/minggu. Dua minggu tidak naik → tambah ±150 kkal lagi (½ centong nasi atau 1 pisang).
 - **Hari boxing:** tambah 150–250 kkal.
 
 ## Aturan penyesuaian (evaluasi tiap 2 minggu)
@@ -43,7 +49,7 @@ Setelah bulk: cutting 8–10 minggu ke ±67–68 kg di body fat 15–16%, atau m
 |---|---|---|---|---|---|---|---|---|
 | 17-09-2026 | Setelah gym, sudah minum air & creatine | 68,4 kg | 55,6 kg | 31,0 kg | 12,8 kg | 18,7% | 82,6 cm | 2417 kkal |
 | **19-09-2026** | **Standar (baseline)** | **67,9 kg** | **55,2 kg** | **30,8 kg** | **12,7 kg** | **18,7%** | **82,5 cm** | **2405 kkal** |
-| 10-10-2026 06:44 | Pagi (kondisi puasa/BAB belum dikonfirmasi) | 67,3 kg | 54,1 kg | 30,1 kg | 13,2 kg | 19,6% | 83,2 cm | 2368 kkal |
+| 10-10-2026 06:44 | Standar | 67,3 kg | 54,1 kg | 30,1 kg | 13,2 kg | 19,6% | 83,2 cm | 2368 kkal |
 
 Catatan baseline 19-09: visceral fat level 9 (normal), lemak torso sedikit di atas rentang (6,86 kg) sementara lengan dan kaki optimal, rasio pinggang-pinggul 0,88, BMR 1562 kkal. Dua scan hampir identik, jadi kondisi setelah gym ternyata tidak banyak mendistorsi hasil.
 
