@@ -41,18 +41,18 @@ Semua set lift utama harus enteng. Tambahan malam (pull-up/push-up) juga setenga
 
 | Minggu | Squat 5×5 (Sen) | Bench 5×3–5 (Sel) | Deadlift 4×3 (Kam) | Squat 3×6 (Kam) | Bench 4×6–8 (Jum) |
 |---|---|---|---|---|---|
-| 6 | 67,5 kg | 67,5 kg 5×3 | 100 kg | 60 kg | 57,5 kg |
-| 7 | 70 kg | 67,5 kg 5×4 | 102,5 kg | 60 kg | 57,5 kg / 60 kg* |
-| 8 | 72,5 kg | 67,5 kg 5×5 | 105 kg | 62,5 kg | 60 kg |
-| 9 | 75 kg | 70 kg 5×3 | 107,5 kg | 62,5 kg | 60 kg / 62,5 kg* |
+| 6 | 70 kg | 67,5 kg 5×3 | 100 kg | 60 kg | 57,5 kg |
+| 7 | 72,5 kg | 67,5 kg 5×4 | 102,5 kg | 60 kg | 57,5 kg / 60 kg* |
+| 8 | 75 kg | 67,5 kg 5×5 | 105 kg | 62,5 kg | 60 kg |
+| 9 | 77,5 kg | 70 kg 5×3 | 107,5 kg | 62,5 kg | 60 kg / 62,5 kg* |
 | 10 | Deload | Deload | Deload | Deload | Deload |
 
 \* Bench volume: double progression. Naik 2,5 kg hanya setelah 4×8 tuntas.
 
 **Sabtu (teknik), siklus 2:** pause squat 55 kg 3×3 · paused bench 52,5 kg 3×3 · deadlift kecepatan 72,5 kg 5×2. Semua enteng.
 
-- Squat mulai dua langkah di bawah minggu 4 (67,5 kg) karena set 4 minggu 4 hanya 3 rep. Deadlift mundur satu langkah sesuai rencana (100 kg). Bench tidak mundur: 65 kg 5×5 sudah tuntas, jadi lanjut 67,5 kg 5×3.
-- Squat minggu 9 (75 kg) dan deadlift minggu 9 (107,5 kg) melewati beban tertinggi siklus 1.
+- Squat mundur satu langkah (70 kg). Set 4 minggu 4 yang cuma 3 rep dianggap faktor hari itu (capek/teknik), bukan mentok, karena set 5 masih tuntas 5 rep. Deadlift mundur satu langkah sesuai rencana (100 kg). Bench tidak mundur: 65 kg 5×5 sudah tuntas, jadi lanjut 67,5 kg 5×3.
+- Squat minggu 9 (77,5 kg) dan deadlift minggu 9 (107,5 kg) melewati beban tertinggi siklus 1.
 - Aturan naik/tahan mingguan tetap berlaku: set terakhir mentok → tahan; gagal dua minggu berturut-turut → turun 5–10%.
 
 ### Aksesori siklus 2 (beban mulai minggu 6)
