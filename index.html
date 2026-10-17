@@ -114,14 +114,31 @@ details.alt[open] > summary::after{content:"–"}
 .sub div b{font-family:var(--display);font-size:1.2rem}
 
 .week{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin:12px 0 0}
-.wd{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:8px 3px;text-align:center;min-height:88px}
+.wd{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:8px 3px;text-align:center;min-height:88px;display:flex;flex-direction:column;align-items:center;font:inherit;color:inherit}
+button.wd{cursor:pointer}
+button.wd:hover{border-color:var(--muted)}
+.wd.sel{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.wd.sel .d{color:var(--bg);opacity:.8}
+.wd .d,.wd .n,.wd .dots{display:block}
+.wd .dots{display:flex}
 .wd.off{background:transparent;border-style:dashed;color:var(--muted)}
 .wd.today{border:2px solid var(--ink)}
+.wd.sel.today{box-shadow:0 0 0 2px var(--bg) inset}
+.wd.sel.today .d{color:var(--bg)}
 .wd .d{font-size:.75rem;color:var(--muted)}
 .wd.today .d{color:var(--ink);font-weight:600}
 .wd .n{font-family:var(--display);font-size:.98rem;line-height:1.05;margin:3px 0 6px}
 .dots{display:flex;justify-content:center;gap:3px;flex-wrap:wrap}
 .dot{width:9px;height:9px;border-radius:50%;background:var(--c)}
+.vsw{display:flex;border:2px solid var(--ink);border-radius:6px;overflow:hidden;margin:4px 0 10px}
+.vsw button{flex:1;min-width:0;padding:9px 8px;background:transparent;border:0;cursor:pointer;text-align:left}
+.vsw button + button{border-left:2px solid var(--ink)}
+.vsw button[aria-selected="true"]{background:var(--ink);color:var(--bg)}
+.vsw strong{display:block;font-family:var(--display);font-size:1.15rem}
+.vsw span{display:block;font-size:.78rem;opacity:.8;line-height:1.2}
+.sess .focus{margin:-4px 0 8px}
+td.upd{font-weight:600}
+@media (max-width:560px){.hm{display:none}.sess table{min-width:0;font-size:.88rem}.sess td,.sess th{padding-left:8px;padding-right:8px}}
 .legend{display:flex;gap:14px;font-size:.82rem;color:var(--muted);margin-top:8px;flex-wrap:wrap}
 .legend span{display:flex;align-items:center;gap:5px}
 
@@ -303,30 +320,9 @@ function renderHome(pmd, bmd){
     }
   }
 
-  // jadwal mingguan Versi yang dijalankan
-  const vh = [...pdom.querySelectorAll("h2")].find(x=>/dijalankan/i.test(x.textContent));
-  if (vh){
-    const days = {};
-    let n = vh.nextElementSibling;
-    while (n && n.tagName !== "H2"){
-      if (n.tagName === "H3"){
-        const m = n.textContent.match(/^(\w+):\s*([^(]+)/);
-        if (m && DAYS.includes(m[1])){
-          const t = nextTable(n), lifts = [];
-          if (t) t.querySelectorAll("tbody tr td:first-child strong").forEach(s=>{ const k = liftOf(s.textContent); if (k && !lifts.includes(k)) lifts.push(k); });
-          days[m[1]] = {name:m[2].trim(), lifts, focus:(n.textContent.match(/\((.+)\)/)||[])[1]||""};
-        }
-      }
-      n = n.nextElementSibling;
-    }
-    const today = (new Date().getDay()+6)%7;
-    h += `<h2>Jadwal seminggu</h2><div class="week">`;
-    DAYS.forEach((d,i)=>{
-      const x = days[d], cls = (x?"wd":"wd off") + (i===today?" today":"");
-      h += `<div class="${cls}" title="${x?esc(x.focus):"Libur"}"><div class="d">${i===today?"Hari ini":d.slice(0,3)}</div><div class="n">${x?esc(x.name):"Libur"}</div>${x?`<div class="dots">${x.lifts.map(k=>`<i class="dot" style="--c:${LIFT[k]}"></i>`).join("")}</div>`:""}</div>`;
-    });
-    h += `</div><div class="legend">${["S","B","D"].map(k=>`<span><i class="dot" style="--c:${LIFT[k]}"></i>${LIFT_NAME[k]}</span>`).join("")}</div>`;
-  }
+  // jadwal mingguan (semua versi, bisa dipilih)
+  const versions = parseVersions(pdom);
+  if (versions.length) h += `<h2 id="jadwal">Jadwal seminggu</h2><div id="sched"></div>`;
 
   // tubuh & nutrisi
   if (bdom && bmd){
@@ -364,6 +360,114 @@ function renderHome(pmd, bmd){
   h += `<p class="foot">Dihitung otomatis dari program.md dan body.md. Minggu sekarang diambil dari baris “Siklus N mulai Senin, …” di status program.</p>`;
   view.innerHTML = h;
   view.querySelectorAll("[data-go]").forEach(b=>b.addEventListener("click",()=>go(b.dataset.go)));
+  if (versions.length){ SCHED.loads = currentLoads(pdom, info); renderSched(versions, info); }
+}
+
+// beban terkini per hari: lift utama dari rencana minggu ini, aksesori dari tabel "Aksesori siklus N"
+function currentLoads(pdom, info){
+  const out = {main:{}, acc:{}, label:null};
+  if (!info) return out;
+  const wp = weekPlan(pdom, info);
+  if (wp && wp.row){
+    wp.ths.slice(1).forEach((th,i)=>{
+      const k = liftOf(th), day = (th.match(/\((\w+)\)/)||[])[1];
+      if (k && day) out.main[day+"|"+k] = wp.row.cells[i+1].textContent.trim();
+    });
+    out.label = "minggu " + info.week;
+  }
+  const ah = [...pdom.querySelectorAll("h3")].find(x=>new RegExp("^Aksesori siklus\\s+"+info.cycle+"\\b","i").test(x.textContent));
+  const t = ah && nextTable(ah);
+  if (t && info.inCycle !== 5){
+    [...t.querySelectorAll("tbody tr")].forEach(r=>{
+      const d = r.cells[0].textContent.trim(), name = r.cells[1].textContent.trim();
+      (out.acc[d] = out.acc[d] || []).push({name, load:r.cells[2].textContent.trim(), target:(r.cells[3]||{}).textContent||""});
+    });
+  }
+  return out;
+}
+function normName(s){ return s.toLowerCase().replace(/\(.*?\)/g,"").replace(/[^a-z0-9/ +-]/g,"").trim(); }
+function matchAcc(list, name){
+  if (!list) return null;
+  const parts = normName(name).split(/\s*[\/+]\s*/).filter(Boolean);
+  if (parts.length > 1 && /\+/.test(name)) return null; // superset: jangan ditebak
+  return list.find(a=>{ const n = normName(a.name); return parts.some(p=>p===n || p.includes(n) || n.includes(p)); }) || null;
+}
+
+function parseVersions(pdom){
+  const out = [];
+  pdom.querySelectorAll("h2").forEach(h=>{
+    const m = h.textContent.match(/^Versi\s+([A-Z])\s*[—-]?\s*(.*)$/);
+    if (!m) return;
+    const v = {id:m[1], label:m[2].replace(/\(.*?\)/g,"").trim(), running:/dijalankan/i.test(h.textContent), days:{}};
+    let n = h.nextElementSibling, cur = null;
+    while (n && n.tagName !== "H2"){
+      if (n.tagName === "H3"){
+        const d = n.textContent.match(/^(\w+):\s*([^(]+)(?:\((.+)\))?/);
+        cur = (d && DAYS.includes(d[1])) ? (v.days[d[1]] = {name:d[2].trim(), focus:(d[3]||"").trim(), nodes:[], lifts:[]}) : null;
+      } else if (cur){
+        cur.nodes.push(n);
+        if (n.tagName === "TABLE") n.querySelectorAll("tbody tr td:first-child strong").forEach(s=>{ const k = liftOf(s.textContent); if (k && !cur.lifts.includes(k)) cur.lifts.push(k); });
+      }
+      n = n.nextElementSibling;
+    }
+    if (Object.keys(v.days).length) out.push(v);
+  });
+  return out;
+}
+
+const SCHED = {v:null, d:null};
+function renderSched(versions, info){
+  const box = document.getElementById("sched"); if (!box) return;
+  const today = (new Date().getDay()+6)%7;
+  let saved = null; try{ saved = localStorage.getItem("gym-version"); }catch(e){}
+  if (!SCHED.v || !versions.some(x=>x.id===SCHED.v)) SCHED.v = (versions.find(x=>x.id===saved) || versions.find(x=>x.running) || versions[0]).id;
+  const v = versions.find(x=>x.id===SCHED.v);
+  if (!SCHED.d || !v.days[SCHED.d]){
+    // hari ini kalau latihan, kalau libur pilih hari latihan berikutnya
+    for (let i=0;i<7;i++){ const d = DAYS[(today+i)%7]; if (v.days[d]){ SCHED.d = d; break; } }
+  }
+  let h = "";
+  if (versions.length > 1){
+    h += `<div class="vsw" role="tablist" aria-label="Versi program">${versions.map(x=>`<button role="tab" data-v="${x.id}" aria-selected="${x.id===v.id}"><strong>Versi ${x.id}${x.running?" ✓":""}</strong><span>${esc(x.label)}</span></button>`).join("")}</div>`;
+  }
+  h += `<div class="week" role="tablist" aria-label="Hari">`;
+  DAYS.forEach((d,i)=>{
+    const x = v.days[d];
+    const cls = (x?"wd":"wd off") + (i===today?" today":"") + (d===SCHED.d?" sel":"");
+    const inner = `<span class="d">${i===today?"Hari ini":d.slice(0,3)}</span><span class="n">${x?esc(x.name):"Libur"}</span>${x?`<span class="dots">${x.lifts.map(k=>`<i class="dot" style="--c:${LIFT[k]}"></i>`).join("")}</span>`:""}`;
+    h += x ? `<button class="${cls}" role="tab" data-d="${d}" aria-selected="${d===SCHED.d}">${inner}</button>` : `<div class="${cls}">${inner}</div>`;
+  });
+  h += `</div><div class="legend">${["S","B","D"].map(k=>`<span><i class="dot" style="--c:${LIFT[k]}"></i>${LIFT_NAME[k]}</span>`).join("")}<span>· ketuk hari untuk detail</span></div>`;
+  if (!v.running) h += `<p class="callout">Versi ${v.id} bukan versi yang sedang dijalankan. Hanya untuk perbandingan.</p>`;
+  const day = v.days[SCHED.d];
+  if (day){
+    h += `<div id="sess" class="sess"><h3>${esc(SCHED.d)}: ${esc(day.name)}</h3>${day.focus?`<p class="focus">${esc(day.focus)}</p>`:""}</div>`;
+  }
+  box.innerHTML = h;
+  if (day){
+    const card = document.getElementById("sess");
+    day.nodes.forEach(n=>card.appendChild(n.cloneNode(true)));
+    const L = SCHED.loads || {main:{}, acc:{}}, ab = SCHED.d.slice(0,3);
+    card.querySelectorAll("table").forEach(t=>{
+      const ths = [...t.querySelectorAll("th")];
+      const i = ths.findIndex(x=>/^rest$/i.test(x.textContent.trim()));
+      if (i>=0) t.querySelectorAll("tr").forEach(r=>r.cells[i] && r.cells[i].classList.add("hm"));
+      const bi = ths.findIndex(x=>/^beban/i.test(x.textContent.trim()));
+      if (bi < 0 || !v.running) return;
+      let changed = 0;
+      t.querySelectorAll("tbody tr").forEach(r=>{
+        const name = r.cells[0].textContent.trim(), strong = r.cells[0].querySelector("strong");
+        const k = strong ? liftOf(strong.textContent) : null;
+        let val = k ? L.main[ab+"|"+k] : null;
+        if (!val){ const a = matchAcc(L.acc[ab], name); if (a) val = a.load; }
+        if (val){ r.cells[bi].textContent = val; r.cells[bi].classList.add("upd"); changed++; }
+      });
+      if (changed) ths[bi].textContent = "Beban sekarang";
+    });
+    decorate(card, null);
+  }
+  box.querySelectorAll("[data-v]").forEach(b=>b.addEventListener("click",()=>{ SCHED.v = b.dataset.v; SCHED.d = null; try{ localStorage.setItem("gym-version", SCHED.v); }catch(e){} renderSched(versions, info); }));
+  box.querySelectorAll("[data-d]").forEach(b=>b.addEventListener("click",()=>{ SCHED.d = b.dataset.d; renderSched(versions, info); document.getElementById("sess").scrollIntoView({behavior:"smooth", block:"nearest"}); }));
 }
 
 /* ---------- tab markdown ---------- */
