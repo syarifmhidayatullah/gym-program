@@ -257,6 +257,8 @@ Squat 1× · Bench 1× · Deadlift 0× per minggu (diganti RDL). Rabu & Minggu l
 
 Tanda paling gampang: kecepatan bar. Target lift utama selalu *berat tapi aman*; sesi ringan & pemanasan *enteng*.
 
+**Target effort berlaku untuk set terakhir (set terberat), bukan set pertama.** Dengan beban sama di semua set, set awal wajar terasa *enteng* dan makin berat ke belakang. Contoh 5×5 squat: set 1–2 enteng, set 3–4 mulai berat, set 5 berat tapi aman. Kalau set terakhir *mentok* → tahan beban minggu depan. Kalau set pertama sudah *berat tapi aman* → beban terlalu berat untuk hari itu, turunkan 2,5–5 kg. Untuk aksesori, rep boleh turun sedikit di set akhir (misalnya 12, 11, 10); itu normal dalam double progression.
+
 Format log untuk review: `Squat 72,5 kg × 5, berat tapi aman` · `Bench 65 kg × 3, enteng` · `Deadlift 102,5 kg × 3, mentok di set 4`.
 
 ## Pemanasan
