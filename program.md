@@ -4,41 +4,82 @@ Prioritas: kekuatan squat, bench, deadlift dulu, lalu ukuran otot.
 
 ## Status sekarang
 
-- **Siklus 1, minggu 4** (mulai Senin, 12 Oktober 2026). Minggu 5 deload, minggu 6 awal siklus 2.
+- **Siklus 1 selesai** (review 17-10-2026). **Minggu 5 deload: 19–24 Oktober 2026.** **Siklus 2 mulai Senin, 26 Oktober 2026** (minggu 6–9, deload minggu 10 mulai 23 November).
 - **Versi yang dijalankan: Versi B** (Upper/Lower + sesi teknik). Versi A tetap dicatat sebagai alternatif; beban hari berat keduanya identik, jadi bisa pindah kapan saja tanpa hitung ulang.
-- **Estimasi 1RM** (dari log awal): Squat ±85 kg · Bench ±75 kg · Deadlift ±115 kg. Hitung ulang di minggu 6 dari log minggu 4.
+- **Estimasi 1RM** (dari log minggu 4): Squat ±85 kg (72,5 × 5) · Bench ±76 kg (65 × 5) · Deadlift ±112,5 kg (102,5 × 3). Deadlift 4×3 tidak dibawa sampai mentok, jadi angka formulanya cenderung di bawah kemampuan asli. Hitung ulang di minggu 11 dari log minggu 9.
 - **Jadwal harian:** tidur 22.00–04.30 (±6,5 jam), latihan 06.00–07.30.
 - **Nutrisi:** lean bulk 4 bulan, mulai 2500 kkal. Detail di [body.md](body.md).
 
 ## Rencana hari berat
 
-### Siklus 1
+### Siklus 1 (selesai, hasil aktual)
 
-| Minggu | Squat 5×5 | Bench 5×3–5 | Deadlift 4×3 |
-|---|---|---|---|
-| 1 | 65 kg | 62,5 kg 5×3 | 95 kg |
-| 2 | 67,5 kg | 62,5 kg 5×4 | 97,5 kg |
-| 3 | 70 kg | 62,5 kg 5×5 | 100 kg |
-| 4 | 72,5 kg | 65 kg 5×3 | 102,5 kg |
-| 5 (deload) | 55 kg 3×5 | 50 kg 3×3 | 75 kg 2×3 |
+| Minggu | Squat 5×5 | Bench 5×3–5 | Deadlift 4×3 | Bench volume (Jum) | Squat Lower B 3×6 |
+|---|---|---|---|---|---|
+| 1 | 65 kg ✓ | 62,5 kg 5×5 | 95 kg ✓ | 55 kg 8,8,8,7 | 57,5 kg ✓ |
+| 2 | 67,5 kg ✓ | 65 kg 5×3 | 97,5 kg ✓ | 55 kg 4×8 | 60 kg ✓ |
+| 3 | 70 kg ✓ | 65 kg 5×4 | 100 kg ✓ | 55 kg 4×8 | 60 kg ✓ |
+| 4 | 72,5 kg 5,5,5,**3**,5 | 65 kg 5×5 | 102,5 kg ✓ | 57,5 kg 8,8,8,7 | 60 kg ✓ |
+
+Bench berjalan satu langkah di depan rencana awal (62,5 kg 5×5 sudah di minggu 1). Rasa per set tidak tercatat di log siklus 1.
 
 Hari berat: **Versi B (dijalankan) → Squat Sen, Bench Sel, Deadlift Kam.** Versi A → Squat Sen, Bench Sel, Deadlift Rab.
 
-### Siklus 2 (perkiraan, berlaku kalau minggu 4 tuntas tanpa set mentok)
+### Minggu 5: deload (19–24 Oktober 2026)
 
-| Minggu | Squat 5×5 | Bench | Deadlift 4×3 |
+| Hari | Lift utama | Aksesori |
+|---|---|---|
+| Sen – Lower A | Squat 55 kg 3×5 | 2 set per latihan, beban sama, berhenti 3–4 rep sebelum gagal |
+| Sel – Upper A | Bench 50 kg 3×3 | sama |
+| Kam – Lower B | Deadlift 75 kg 2×3 · Squat 45 kg 2×6 | sama |
+| Jum – Upper B | Bench 45 kg 2×8 | sama |
+| Sab | Libur, atau jalan santai / mobilitas | – |
+
+Semua set lift utama harus enteng. Tambahan malam (pull-up/push-up) juga setengah set.
+
+### Siklus 2 (dari log siklus 1, mulai 26 Oktober 2026)
+
+| Minggu | Squat 5×5 (Sen) | Bench 5×3–5 (Sel) | Deadlift 4×3 (Kam) | Squat 3×6 (Kam) | Bench 4×6–8 (Jum) |
+|---|---|---|---|---|---|
+| 6 | 67,5 kg | 67,5 kg 5×3 | 100 kg | 60 kg | 57,5 kg |
+| 7 | 70 kg | 67,5 kg 5×4 | 102,5 kg | 60 kg | 57,5 kg / 60 kg* |
+| 8 | 72,5 kg | 67,5 kg 5×5 | 105 kg | 62,5 kg | 60 kg |
+| 9 | 75 kg | 70 kg 5×3 | 107,5 kg | 62,5 kg | 60 kg / 62,5 kg* |
+| 10 | Deload | Deload | Deload | Deload | Deload |
+
+\* Bench volume: double progression. Naik 2,5 kg hanya setelah 4×8 tuntas.
+
+**Sabtu (teknik), siklus 2:** pause squat 55 kg 3×3 · paused bench 52,5 kg 3×3 · deadlift kecepatan 72,5 kg 5×2. Semua enteng.
+
+- Squat mulai dua langkah di bawah minggu 4 (67,5 kg) karena set 4 minggu 4 hanya 3 rep. Deadlift mundur satu langkah sesuai rencana (100 kg). Bench tidak mundur: 65 kg 5×5 sudah tuntas, jadi lanjut 67,5 kg 5×3.
+- Squat minggu 9 (75 kg) dan deadlift minggu 9 (107,5 kg) melewati beban tertinggi siklus 1.
+- Aturan naik/tahan mingguan tetap berlaku: set terakhir mentok → tahan; gagal dua minggu berturut-turut → turun 5–10%.
+
+### Aksesori siklus 2 (beban mulai minggu 6)
+
+| Hari | Latihan | Beban | Target |
 |---|---|---|---|
-| 6 | 70 kg | 65 kg 5×4 | 100 kg |
-| 7 | 72,5 kg | 65 kg 5×5 | 102,5 kg |
-| 8 | 75 kg | 67,5 kg 5×3 | 105 kg |
-| 9 | 77,5 kg | 67,5 kg 5×4 | 107,5 kg |
-| 10 | Deload | Deload | Deload |
-
-- Polanya: mundur satu langkah dari minggu 4, lalu naik sampai melewatinya. Bench tidak mundur karena progresinya lewat rep.
-- **Minggu 4 mentok di set terakhir saja:** mulai dua langkah di bawah (squat 67,5 kg, deadlift 97,5 kg), lalu +2,5 kg per minggu.
-- **Gagal di beberapa set:** turunkan 5–10% dari beban minggu 4, lalu bangun lagi.
-- Hari lain (squat volume, squat ringan Lower B, sesi ringan Sabtu) ikut naik ±2,5 kg dari siklus 1. Aksesori tetap double progression.
-- Angka pasti siklus 2 dihitung dari log minggu 4.
+| Sen | Romanian Deadlift | 65 kg | 3×8 |
+| Sen | Hack Squat | 35 kg | 3×8–10 |
+| Sen | Leg Curl | pin berikutnya di atas 70 kg | 3×10–12 |
+| Sen | Calf Raise | 40 kg (tahan) | 4×15 dulu |
+| Sen | Hip Abduction (opsional) | 63 kg (tahan) | 3×15 dulu |
+| Sen | Hip Adduction (opsional) | pin berikutnya di atas 23 kg | 3×15 |
+| Sel | T-Bar Row | 35 kg plate | 4×6–8 |
+| Sel | Incline DB Press | 22,5 kg/tangan | 3×8–10 |
+| Sel | Lat Pulldown | 54 kg (tahan) | 3×10 dulu |
+| Sel | Lateral Raise | 8 kg/tangan (atau 9 kg, target 12) | 3×12–15 |
+| Sel | Triceps Overhead (rope) | 32 kg (tahan) | 3×10 dulu |
+| Sel | Bayesian Cable Curl | 14 kg, set lurus (bukan piramida) | 3×10–12 |
+| Kam | Bulgarian Split Squat | 10 kg/tangan (tahan) | 3×10 per kaki dulu |
+| Kam | Leg Extension | 63 kg (tahan) | 3×15 dulu |
+| Kam | Calf Raise | 45 kg | 3×12–15 |
+| Jum | Seated DB Shoulder Press | 20 kg/tangan | 3×8–10 |
+| Jum | Machine Row (chest-supported) | pin berikutnya di atas 40 kg | 3×8–10 |
+| Jum | Lat Pulldown | 50 kg (tahan) | 3×10–12 |
+| Jum | Rear Delt Fly | pin berikutnya di atas 45 kg | 3×12–15 |
+| Jum | Biceps Curl | 10 kg/tangan (tahan) | set 3 minimal 10 rep |
+| Jum | Triceps Pushdown | pin berikutnya di atas 18 kg | 3×10–12 |
 
 ## Versi B — Upper/Lower + sesi teknik (dijalankan)
 
