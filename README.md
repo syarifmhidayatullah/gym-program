@@ -7,13 +7,16 @@ Inti dari chat program latihan. Data harian (set, rep, beban) ada di aplikasi tr
 | [program.md](program.md) | Status sekarang, e1RM, jadwal & beban Versi B (dijalankan), A dan C, rencana siklus, aturan progresi | Tiap akhir siklus / saat beban dihitung ulang |
 | [decisions.md](decisions.md) | Keputusan yang sudah diambil beserta alasannya | Saat ada keputusan baru |
 | [body.md](body.md) | Komposisi tubuh, riwayat scan, target bulk, kalori & protein | Tiap scan / evaluasi kalori |
+| [log-template.md](log-template.md) | Format log mingguan, nutrisi, dan scan untuk review | Jarang |
+| [project-instructions.md](project-instructions.md) | Cadangan instruksi Claude Project (ditempel ke kolom Instructions, bukan knowledge) | Saat cara kerja project diubah |
 | index.html | Halaman web yang merender file-file di atas | Jarang |
 
-## Cara pakai di chat baru
+## Cara pakai di Claude Project
 
-1. Kirim link repo ini dan minta Claude membaca `program.md`, `decisions.md`, dan `body.md` dulu.
-2. Untuk review, sertakan log dari aplikasi tracker (lift utama + rasanya per set: *enteng*, *berat tapi aman*, atau *mentok*).
-3. Hasil review (beban baru, keputusan baru) di-commit balik ke sini.
+1. Buat project baru, tempel isi `project-instructions.md` (bagian di bawah garis) ke kolom **Instructions**.
+2. Di project knowledge: **+ → GitHub**, pilih repo ini, centang `program.md`, `decisions.md`, `body.md`, `log-template.md`.
+3. Review: kirim log sesuai `log-template.md` (lift utama + rasa per set: *enteng*, *berat tapi aman*, *mentok*).
+4. Jawaban yang mengubah program diakhiri blok **Update repo**. Commit ke sini, lalu tekan **Sync** di project knowledge.
 
 ## Halaman web
 
