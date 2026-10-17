@@ -8,15 +8,14 @@ Inti dari chat program latihan. Data harian (set, rep, beban) ada di aplikasi tr
 | [decisions.md](decisions.md) | Keputusan yang sudah diambil beserta alasannya | Saat ada keputusan baru |
 | [body.md](body.md) | Komposisi tubuh, riwayat scan, target bulk, kalori & protein | Tiap scan / evaluasi kalori |
 | [log-template.md](log-template.md) | Format log mingguan, nutrisi, dan scan untuk review | Jarang |
-| [project-instructions.md](project-instructions.md) | Cadangan instruksi Claude Project (ditempel ke kolom Instructions, bukan knowledge) | Saat cara kerja project diubah |
+| [project-instructions.md](project-instructions.md) | Instruksi Claude Project "Progress Gym" | Saat cara kerja project diubah |
 | index.html | Halaman web yang merender file-file di atas | Jarang |
 
 ## Cara pakai di Claude Project
 
-1. Buat project baru, tempel isi `project-instructions.md` (bagian di bawah garis) ke kolom **Instructions**.
-2. Di project knowledge: **+ → GitHub**, pilih repo ini, centang `program.md`, `decisions.md`, `body.md`, `log-template.md`.
+1. Di project **Progress Gym**, tempel isi `project-instructions.md` (bagian di bawah garis) ke instruksi project.
+2. Tidak perlu upload file. Tiap sesi meng-clone repo ini, membaca `program.md`, `decisions.md`, `body.md`, `log-template.md`, lalu commit perubahannya langsung.
 3. Review: kirim log sesuai `log-template.md` (lift utama + rasa per set: *enteng*, *berat tapi aman*, *mentok*).
-4. Jawaban yang mengubah program diakhiri blok **Update repo**. Commit ke sini, lalu tekan **Sync** di project knowledge.
 
 ## Halaman web
 
