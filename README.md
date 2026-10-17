@@ -9,7 +9,7 @@ Inti dari chat program latihan. Data harian (set, rep, beban) ada di aplikasi tr
 | [body.md](body.md) | Komposisi tubuh, riwayat scan, target bulk, kalori & protein | Tiap scan / evaluasi kalori |
 | [log-template.md](log-template.md) | Format log mingguan, nutrisi, dan scan untuk review | Jarang |
 | [project-instructions.md](project-instructions.md) | Instruksi Claude Project "Progress Gym" | Saat cara kerja project diubah |
-| index.html | Halaman web yang merender file-file di atas | Jarang |
+| index.html | Halaman web: tab Ringkas (minggu sekarang, beban minggu ini, e1RM, jadwal, tubuh) dihitung dari program.md & body.md, plus tab per file | Jarang |
 
 ## Cara pakai di Claude Project
 
@@ -20,3 +20,5 @@ Inti dari chat program latihan. Data harian (set, rep, beban) ada di aplikasi tr
 ## Halaman web
 
 `index.html` membaca file `.md` langsung, jadi cukup edit `.md` lalu push. Bisa di-deploy sebagai situs statis (misalnya Cloudflare Pages, tanpa build command, output directory `/`).
+
+Tab **Ringkas** membaca minggu sekarang dari baris status `Siklus N mulai Senin, DD Bulan YYYY` di program.md, beban dari tabel yang kolom pertamanya `Minggu`, dan e1RM dari baris `Estimasi 1RM`. Pertahankan format itu saat memperbarui program.

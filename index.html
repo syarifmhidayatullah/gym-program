@@ -11,57 +11,142 @@
 <style>
 :root{
   --bg:#E8EAED; --surface:#F6F7F8; --ink:#1C2026; --muted:#5B636E; --line:#CDD2D8;
-  --accent:#C8323A; --link:#2F5FB3;
+  --squat:#C8323A; --bench:#2F5FB3; --dead:#C99414; --good:#2E7D4F; --bad:#B4432F; --link:#2F5FB3;
   --display:"Barlow Condensed","Arial Narrow",Arial,sans-serif;
   --body:"Barlow","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
     --bg:#15181C; --surface:#1E2227; --ink:#E6E8EB; --muted:#9AA3AE; --line:#323840;
-    --accent:#E0555C; --link:#6A95E6;
+    --squat:#E0555C; --bench:#6A95E6; --dead:#E6B83C; --good:#5FBF86; --bad:#E07A62; --link:#6A95E6;
   }
 }
 :root[data-theme="dark"]{
   --bg:#15181C; --surface:#1E2227; --ink:#E6E8EB; --muted:#9AA3AE; --line:#323840;
-  --accent:#E0555C; --link:#6A95E6;
+  --squat:#E0555C; --bench:#6A95E6; --dead:#E6B83C; --good:#5FBF86; --bad:#E07A62; --link:#6A95E6;
 }
 *{box-sizing:border-box}
-html{scroll-padding-top:72px}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55}
+html{scroll-padding-top:76px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.5}
+button{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--link);outline-offset:2px}
+a{color:var(--link)}
+
+/* header */
 .top{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
-.top-in{max-width:780px;margin:0 auto;padding:10px 16px;display:flex;align-items:center;gap:12px}
-.brand{font-family:var(--display);font-weight:700;font-size:1.4rem;margin-right:auto;white-space:nowrap}
+.top-in{max-width:800px;margin:0 auto;padding:10px 16px;display:flex;align-items:center;gap:12px}
+.brand{font-family:var(--display);font-weight:700;font-size:1.45rem;margin-right:auto;white-space:nowrap;display:flex;align-items:center;gap:8px}
+.brand i{display:inline-block;width:6px;height:22px;border-radius:2px;background:var(--c)}
 nav{display:flex;border:2px solid var(--ink);border-radius:6px;overflow:hidden}
-nav button{font:inherit;font-weight:600;color:inherit;background:transparent;border:0;padding:6px 12px;cursor:pointer;white-space:nowrap}
+nav button{font-weight:600;background:transparent;border:0;padding:6px 12px;cursor:pointer;white-space:nowrap}
 nav button + button{border-left:2px solid var(--ink)}
 nav button[aria-selected="true"]{background:var(--ink);color:var(--bg)}
-nav button:focus-visible{outline:3px solid var(--link);outline-offset:-3px}
-@media (max-width:440px){.brand{display:none}nav{flex:1}nav button{flex:1;padding:8px 6px}}
-main{max-width:780px;margin:0 auto;padding:24px 16px 72px}
-h1,h2,h3{font-family:var(--display);font-weight:700;line-height:1.1}
-h1{font-size:clamp(2.1rem,8vw,3rem);margin:.2em 0 .4em}
-h2{font-size:1.8rem;margin:1.8em 0 .5em;padding-top:.3em;border-top:3px solid var(--ink)}
-h3{font-size:1.3rem;margin:1.5em 0 .4em}
-a{color:var(--link)}
-p,li{max-width:70ch}
-ul{padding-left:1.2em}
-li{margin:.3em 0}
-code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.9em}
-.tw{overflow-x:auto;background:var(--surface);border:1px solid var(--line);border-radius:8px;margin:.8em 0}
-table{border-collapse:collapse;width:100%;min-width:460px;font-size:.94rem}
-th{text-align:left;font-weight:600;color:var(--muted);font-size:.82rem;padding:8px 10px;border-bottom:1px solid var(--line)}
-td{padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
-tr:last-child td{border-bottom:0}
-td strong{border-left:3px solid var(--accent);padding-left:6px;margin-left:-9px}
+nav button:focus-visible{outline-offset:-3px}
+@media (max-width:520px){.brand{display:none}nav{flex:1}nav button{flex:1;padding:8px 4px;font-size:.95rem}}
+
+main{max-width:800px;margin:0 auto;padding:24px 16px 72px}
+h1,h2,h3{font-family:var(--display);font-weight:700;line-height:1.08;margin:0}
+h1{font-size:clamp(2.2rem,8.5vw,3.2rem);letter-spacing:-.01em;margin:.1em 0 .35em}
+h2{font-size:1.85rem;margin:44px 0 12px}
+h3{font-size:1.35rem}
+p,li{max-width:72ch}
+p{margin:.5em 0}
+ul{margin:.4em 0;padding-left:1.15em}
+li{margin:.35em 0}
+code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.88em}
 .msg{color:var(--muted);padding:40px 0}
-.foot{color:var(--muted);font-size:.85rem;margin-top:48px}
+.foot{color:var(--muted);font-size:.85rem;margin-top:52px;border-top:1px solid var(--line);padding-top:12px}
+
+/* tables */
+.tw{overflow-x:auto;background:var(--surface);border:1px solid var(--line);border-radius:8px;margin:12px 0}
+.card .tw{border:0;border-radius:0;margin:0;background:transparent}
+table{border-collapse:collapse;width:100%;min-width:440px;font-size:.94rem}
+th{text-align:left;font-weight:600;color:var(--muted);font-size:.8rem;padding:7px 10px;border-bottom:1px solid var(--line);white-space:nowrap}
+td{padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:0}
+th:first-child,td:first-child{padding-left:14px}
+td:first-child{border-left:4px solid transparent}
+tr.lift td:first-child{border-left-color:var(--c)}
+tr.now td{background:color-mix(in srgb,var(--ink) 7%,transparent);font-weight:600}
+tr.now td:first-child::after{content:"sekarang";display:inline-block;margin-left:6px;font-size:.7rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;background:var(--ink);color:var(--bg);border-radius:3px;padding:1px 5px;vertical-align:2px}
+
+/* doc cards */
+.card{background:var(--surface);border:1px solid var(--line);border-radius:8px;margin:14px 0;padding:14px 0 4px;overflow:hidden}
+.card > :not(.tw){padding-left:16px;padding-right:16px}
+.card > h3{margin-bottom:8px}
+.card > p,.card > ul{color:var(--muted);font-size:.93rem}
+.card > p:last-child,.card > ul:last-child{margin-bottom:10px}
+.card.lift > h3{border-left:4px solid var(--c);padding-left:12px}
+details.alt{border:2px dashed var(--line);border-radius:8px;margin:28px 0;padding:0 14px}
+details.alt[open]{padding-bottom:10px}
+details.alt > summary{cursor:pointer;list-style:none;padding:14px 0;display:flex;align-items:center;gap:10px}
+details.alt > summary::-webkit-details-marker{display:none}
+details.alt > summary h2{margin:0;font-size:1.5rem}
+details.alt > summary::after{content:"+";margin-left:auto;font-family:var(--display);font-size:1.6rem;color:var(--muted)}
+details.alt[open] > summary::after{content:"–"}
+.tag{font-size:.75rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;border:1px solid var(--line);border-radius:3px;padding:1px 6px;color:var(--muted)}
+.tag.run{border-color:var(--good);color:var(--good)}
+
+/* dashboard */
+.kicker{font-size:.8rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.lede{color:var(--muted);max-width:60ch;margin:0}
+.progress{display:grid;grid-template-columns:repeat(5,1fr);gap:4px;margin:18px 0 4px}
+.progress div{height:8px;border-radius:2px;background:var(--line)}
+.progress div.done{background:var(--muted)}
+.progress div.cur{background:var(--ink)}
+.progress-l{display:grid;grid-template-columns:repeat(5,1fr);gap:4px;font-size:.75rem;color:var(--muted)}
+.progress-l span.cur{color:var(--ink);font-weight:600}
+
+.lifts{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:14px 0}
+@media (max-width:560px){.lifts{gap:6px}.lc{padding:10px}.lc .v{font-size:1.45rem}.lc .l{font-size:.78rem}.lc .s{font-size:.8rem}.lc .plates i{width:7px}}
+.lc{background:var(--surface);border:1px solid var(--line);border-top:5px solid var(--c);border-radius:8px;padding:12px 14px}
+.lc .l{font-size:.85rem;color:var(--muted);font-weight:600}
+.lc .v{font-family:var(--display);font-weight:700;font-size:2rem;line-height:1.05;margin:2px 0;white-space:nowrap}
+.lc .v small{font-size:.55em;font-weight:600;margin-left:2px}
+.lc .s{font-size:.88rem;color:var(--muted)}
+.lc .plates{display:flex;gap:3px;align-items:center;margin-top:8px;height:30px}
+.lc .plates i{display:block;width:10px;border-radius:2px;background:var(--c)}
+.lc .plates b{display:block;height:4px;flex:1;background:var(--line);border-radius:2px}
+
+.sub{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin:10px 0}
+.sub div{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:9px 12px}
+.sub div small{display:block;color:var(--muted);font-size:.78rem}
+.sub div b{font-family:var(--display);font-size:1.2rem}
+
+.week{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin:12px 0 0}
+.wd{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:8px 3px;text-align:center;min-height:88px}
+.wd.off{background:transparent;border-style:dashed;color:var(--muted)}
+.wd.today{border:2px solid var(--ink)}
+.wd .d{font-size:.75rem;color:var(--muted)}
+.wd.today .d{color:var(--ink);font-weight:600}
+.wd .n{font-family:var(--display);font-size:.98rem;line-height:1.05;margin:3px 0 6px}
+.dots{display:flex;justify-content:center;gap:3px;flex-wrap:wrap}
+.dot{width:9px;height:9px;border-radius:50%;background:var(--c)}
+.legend{display:flex;gap:14px;font-size:.82rem;color:var(--muted);margin-top:8px;flex-wrap:wrap}
+.legend span{display:flex;align-items:center;gap:5px}
+
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:12px 0}
+@media (max-width:560px){.stats{grid-template-columns:repeat(2,1fr)}}
+.st{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:10px 12px}
+.st small{display:block;color:var(--muted);font-size:.78rem}
+.st b{font-family:var(--display);font-size:1.6rem;line-height:1.1}
+.st em{display:block;font-style:normal;font-size:.8rem;color:var(--muted)}
+.meter{margin:14px 0 4px}
+.meter .track{position:relative;height:10px;background:var(--line);border-radius:5px}
+.meter .fill{position:absolute;left:0;top:0;bottom:0;border-radius:5px;background:var(--good)}
+.meter .fill.warn{background:var(--dead)}
+.meter .fill.stop{background:var(--bad)}
+.meter .lbl{display:flex;justify-content:space-between;font-size:.8rem;color:var(--muted);margin-top:4px}
+.callout{border-left:4px solid var(--ink);padding:4px 0 4px 14px;margin:14px 0}
+.go{display:inline-block;margin-top:6px;font-weight:600;background:none;border:0;padding:0;color:var(--link);cursor:pointer;text-decoration:underline}
 </style>
 </head>
 <body>
 <header class="top"><div class="top-in">
-  <span class="brand">Program Gym</span>
+  <span class="brand"><i style="--c:var(--squat)"></i><i style="--c:var(--bench)"></i><i style="--c:var(--dead)"></i>Program Gym</span>
   <nav role="tablist" aria-label="Bagian">
-    <button role="tab" data-f="program" aria-selected="true">Program</button>
+    <button role="tab" data-f="home" aria-selected="true">Ringkas</button>
+    <button role="tab" data-f="program" aria-selected="false">Program</button>
     <button role="tab" data-f="decisions" aria-selected="false">Keputusan</button>
     <button role="tab" data-f="body" aria-selected="false">Tubuh</button>
   </nav>
@@ -69,8 +154,24 @@ td strong{border-left:3px solid var(--accent);padding-left:6px;margin-left:-9px}
 <main id="view" role="tabpanel" aria-live="polite"><p class="msg">Memuat…</p></main>
 <script>
 const FILES = {program:"program.md", decisions:"decisions.md", body:"body.md"};
-const cache = {};
+const TAB_NAMES = {home:"Ringkas", program:"Program", decisions:"Keputusan", body:"Tubuh"};
+const LIFT = {S:"var(--squat)", B:"var(--bench)", D:"var(--dead)"};
+const LIFT_NAME = {S:"Squat", B:"Bench", D:"Deadlift"};
+const MONTHS = {januari:0,februari:1,maret:2,april:3,mei:4,juni:5,juli:6,agustus:7,september:8,oktober:9,november:10,desember:11};
+const DAYS = ["Senin","Selasa","Rabu","Kamis","Jumat","Sabtu","Minggu"];
 const view = document.getElementById("view");
+const cache = {};
+
+function esc(s){return String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]))}
+function liftOf(text){
+  const t = text.toLowerCase();
+  if (/deadlift|\brdl\b/.test(t) && !/romanian/.test(t)) return "D";
+  if (/squat/.test(t) && !/split|hack|leg press/.test(t)) return "S";
+  if (/bench/.test(t) && !/incline/.test(t)) return "B";
+  return null;
+}
+function num(s){ const m = String(s).replace(",", ".").match(/-?\d+(\.\d+)?/); return m ? parseFloat(m[0]) : null; }
+function fmt(n){ return String(Math.round(n*10)/10).replace(".", ","); }
 
 async function load(key){
   if (cache[key] !== undefined) return cache[key];
@@ -80,20 +181,207 @@ async function load(key){
   }catch(e){ cache[key] = null; }
   return cache[key];
 }
+function toDom(md){ const d = document.createElement("div"); d.innerHTML = marked.parse(md); return d; }
+function nextTable(el){ let n = el.nextElementSibling; while (n && !/^H[1-3]$/.test(n.tagName)){ if (n.tagName==="TABLE") return n; n = n.nextElementSibling; } return null; }
 
-async function show(key){
-  document.querySelectorAll("nav button").forEach(b=>b.setAttribute("aria-selected", String(b.dataset.f===key)));
-  view.innerHTML = '<p class="msg">Memuat…</p>';
-  const md = await load(key);
-  if (md === null){
-    view.innerHTML = `<p class="msg">${FILES[key]} belum ada di repo.</p>`;
-    return;
-  }
-  view.innerHTML = marked.parse(md);
-  view.querySelectorAll("table").forEach(t=>{
+/* ---------- siklus & minggu sekarang ---------- */
+function cycleInfo(md){
+  const m = md.match(/Siklus\s+(\d+)\s+mulai\s+(?:Senin,\s*)?(\d{1,2})\s+([A-Za-z]+)\s+(\d{4})/i);
+  if (!m || MONTHS[m[3].toLowerCase()] === undefined) return null;
+  const n = +m[1], start = new Date(+m[4], MONTHS[m[3].toLowerCase()], +m[2]);
+  const now = new Date(); now.setHours(0,0,0,0);
+  const week = (n-1)*5 + 1 + Math.floor((now - start) / 864e5 / 7);
+  if (week < 1) return null;
+  return {week, cycle: Math.ceil(week/5), inCycle: (week-1)%5 + 1};
+}
+
+/* ---------- dekorasi tabel & kartu ---------- */
+function decorate(root, info){
+  root.querySelectorAll("table").forEach(t=>{
+    const headFirst = (t.querySelector("th")||{}).textContent || "";
+    t.querySelectorAll("tbody tr").forEach(tr=>{
+      const first = tr.cells[0]; if (!first) return;
+      const strong = first.querySelector("strong");
+      const k = strong ? liftOf(strong.textContent) : null;
+      if (k){ tr.classList.add("lift"); tr.style.setProperty("--c", LIFT[k]); }
+      if (info && /^minggu/i.test(headFirst.trim()) && num(first.textContent) === info.week) tr.classList.add("now");
+    });
     const w = document.createElement("div"); w.className = "tw";
     t.parentNode.insertBefore(w, t); w.appendChild(t);
   });
+  // h3 + isi → kartu
+  [...root.querySelectorAll("h3")].forEach(h=>{
+    const card = document.createElement("article"); card.className = "card";
+    const k = liftOf(h.textContent.replace(/\(.*$/, "")) || liftOf((h.textContent.match(/\((.*)\)/)||[])[1]||"");
+    if (k){ card.classList.add("lift"); card.style.setProperty("--c", LIFT[k]); }
+    h.parentNode.insertBefore(card, h);
+    let n = h; const take = [];
+    while (n && (n === h || !/^H[1-3]$/.test(n.tagName))){ take.push(n); n = n.nextElementSibling; }
+    take.forEach(x=>card.appendChild(x));
+  });
+  // Versi alternatif → bisa dilipat
+  [...root.querySelectorAll("h2")].forEach(h=>{
+    const t = h.textContent;
+    if (/dijalankan/i.test(t)) { h.insertAdjacentHTML("beforeend", ' <span class="tag run">dijalankan</span>'); return; }
+    if (!/^Versi\s+[A-Z]/.test(t)) return;
+    const d = document.createElement("details"); d.className = "alt";
+    const s = document.createElement("summary");
+    h.parentNode.insertBefore(d, h);
+    let n = h.nextElementSibling; s.appendChild(h); d.appendChild(s);
+    while (n && n.tagName !== "H2"){ const nx = n.nextElementSibling; d.appendChild(n); n = nx; }
+  });
+}
+
+/* ---------- Ringkas ---------- */
+function weekPlan(pdom, info){
+  if (!info) return null;
+  // 1) kartu/tabel khusus minggu ini (mis. "Minggu 5: deload")
+  const h = [...pdom.querySelectorAll("h3")].find(x=>new RegExp("^Minggu\\s+"+info.week+"\\b","i").test(x.textContent));
+  if (h){ const t = nextTable(h); if (t) return {title:h.textContent, table:t}; }
+  // 2) baris minggu ini di tabel siklus
+  for (const t of pdom.querySelectorAll("table")){
+    const ths = [...t.querySelectorAll("th")].map(x=>x.textContent.trim());
+    if (!/^minggu/i.test(ths[0]||"")) continue;
+    const row = [...t.querySelectorAll("tbody tr")].find(r=>num(r.cells[0].textContent)===info.week);
+    if (row && ![...row.cells].slice(1).every(c=>/deload/i.test(c.textContent))) return {ths, row};
+  }
+  return null;
+}
+
+function renderHome(pmd, bmd){
+  const pdom = toDom(pmd), bdom = bmd ? toDom(bmd) : null;
+  const info = cycleInfo(pmd);
+  let h = "";
+
+  // judul
+  const deload = info && info.inCycle === 5;
+  h += `<p class="kicker">${info ? `Siklus ${info.cycle} · Minggu ${info.week}` : "Status"}</p>`;
+  h += `<h1>${info ? (deload ? "Minggu deload" : `Minggu ${info.inCycle} dari 4`) : "Program Powerbuilding"}</h1>`;
+  const ver = (pmd.match(/Versi yang dijalankan:\s*([^*]+)\*\*/)||[])[1];
+  h += `<p class="lede">${deload ? "Set dipotong, beban ringan. Semua lift utama harus terasa enteng. " : "Target set terakhir lift utama: berat tapi aman. "}${ver ? "Menjalankan " + esc(ver.trim()) + "." : ""}</p>`;
+  if (info){
+    h += `<div class="progress">${[1,2,3,4,5].map(i=>`<div class="${i<info.inCycle?"done":i===info.inCycle?"cur":""}"></div>`).join("")}</div>`;
+    h += `<div class="progress-l">${[1,2,3,4,5].map(i=>`<span class="${i===info.inCycle?"cur":""}">${i===5?"Deload":"Mg "+((info.cycle-1)*5+i)}</span>`).join("")}</div>`;
+  }
+
+  // beban minggu ini
+  const wp = weekPlan(pdom, info);
+  if (wp && wp.row){
+    h += `<h2>Hari berat minggu ini</h2><div class="lifts">`;
+    const extra = [];
+    wp.ths.slice(1).forEach((th,i)=>{
+      const v = wp.row.cells[i+1].textContent.trim(), k = liftOf(th);
+      const heavy = k && !/3×6|4×6|volume/i.test(th) && !extra.some(e=>e.k===k) && !h.includes(`data-k="${k}"`);
+      if (heavy){
+        const kg = num(v), m = v.match(/(\d+×\d+)/), scheme = m ? m[1] : (th.match(/(\d+×[\d–]+)/)||[])[1] || "";
+        const day = (th.match(/\((\w+)\)/)||[])[1] || "";
+        h += `<div class="lc" data-k="${k}" style="--c:${LIFT[k]}"><div class="l">${LIFT_NAME[k]}${day?" · "+esc(day):""}</div><div class="v">${kg!==null?fmt(kg)+"<small>kg</small>":esc(v)}</div><div class="s">${esc(scheme)}</div></div>`;
+      } else extra.push({k, th, v});
+    });
+    h += `</div>`;
+    if (extra.length) h += `<div class="sub">${extra.map(e=>`<div><small>${esc(e.th)}</small><b>${esc(e.v)}</b></div>`).join("")}</div>`;
+  } else if (wp && wp.table){
+    const t = wp.table.cloneNode(true);
+    h += `<h2>${esc(wp.title)}</h2><div class="tw" id="wk"></div>`;
+    setTimeout(()=>{ const w = document.getElementById("wk"); if (w){ w.appendChild(t); decorate(w, null); } });
+  }
+
+  // e1RM
+  const em = pmd.match(/Estimasi 1RM[^\n]*/);
+  if (em){
+    const line = em[0], get = re => { const m = line.match(re); return m ? num(m[1]) : null; };
+    const e = {S:get(/Squat\s*±\s*([\d,]+)/), B:get(/Bench\s*±\s*([\d,]+)/), D:get(/Deadlift\s*±\s*([\d,]+)/)};
+    if (e.S || e.B || e.D){
+      const max = Math.max(e.S||0, e.B||0, e.D||0);
+      h += `<h2>Estimasi 1RM</h2><div class="lifts">`;
+      for (const k of ["S","B","D"]){ if (!e[k]) continue;
+        const plates = Math.max(1, Math.round(e[k] / max * 6));
+        h += `<div class="lc" style="--c:${LIFT[k]}"><div class="l">${LIFT_NAME[k]}</div><div class="v">±${fmt(e[k])}<small>kg</small></div><div class="plates"><b></b>${'<i style="height:30px"></i>'.repeat(plates)}<b style="flex:.15"></b></div></div>`;
+      }
+      const total = (e.S||0)+(e.B||0)+(e.D||0);
+      h += `</div><p class="lede">Total ±${fmt(total)} kg. Rumus: beban × (1 + rep ÷ 30).</p>`;
+    }
+  }
+
+  // jadwal mingguan Versi yang dijalankan
+  const vh = [...pdom.querySelectorAll("h2")].find(x=>/dijalankan/i.test(x.textContent));
+  if (vh){
+    const days = {};
+    let n = vh.nextElementSibling;
+    while (n && n.tagName !== "H2"){
+      if (n.tagName === "H3"){
+        const m = n.textContent.match(/^(\w+):\s*([^(]+)/);
+        if (m && DAYS.includes(m[1])){
+          const t = nextTable(n), lifts = [];
+          if (t) t.querySelectorAll("tbody tr td:first-child strong").forEach(s=>{ const k = liftOf(s.textContent); if (k && !lifts.includes(k)) lifts.push(k); });
+          days[m[1]] = {name:m[2].trim(), lifts, focus:(n.textContent.match(/\((.+)\)/)||[])[1]||""};
+        }
+      }
+      n = n.nextElementSibling;
+    }
+    const today = (new Date().getDay()+6)%7;
+    h += `<h2>Jadwal seminggu</h2><div class="week">`;
+    DAYS.forEach((d,i)=>{
+      const x = days[d], cls = (x?"wd":"wd off") + (i===today?" today":"");
+      h += `<div class="${cls}" title="${x?esc(x.focus):"Libur"}"><div class="d">${i===today?"Hari ini":d.slice(0,3)}</div><div class="n">${x?esc(x.name):"Libur"}</div>${x?`<div class="dots">${x.lifts.map(k=>`<i class="dot" style="--c:${LIFT[k]}"></i>`).join("")}</div>`:""}</div>`;
+    });
+    h += `</div><div class="legend">${["S","B","D"].map(k=>`<span><i class="dot" style="--c:${LIFT[k]}"></i>${LIFT_NAME[k]}</span>`).join("")}</div>`;
+  }
+
+  // tubuh & nutrisi
+  if (bdom && bmd){
+    const kcal = (bmd.match(/Sekarang:\s*([\d.,]+)\s*kkal/i)||[])[1];
+    const prot = (bmd.match(/Protein\s*([\d–-]+\s*g)/)||[])[1];
+    const rh = [...bdom.querySelectorAll("h2")].find(x=>/riwayat scan/i.test(x.textContent));
+    const t = rh && nextTable(rh);
+    const rem = num((bmd.match(/Rem:\s*lingkar perut\s*([\d,]+)/i)||[])[1]||"");
+    h += `<h2>Tubuh & nutrisi</h2>`;
+    if (kcal || prot) h += `<div class="sub">${kcal?`<div><small>Kalori harian</small><b>${esc(kcal)} kkal</b></div>`:""}${prot?`<div><small>Protein</small><b>${esc(prot)}</b></div>`:""}</div>`;
+    if (t){
+      const ths = [...t.querySelectorAll("th")].map(x=>x.textContent.trim().toLowerCase());
+      const rows = [...t.querySelectorAll("tbody tr")];
+      const last = rows[rows.length-1], base = rows.find(r=>/baseline/i.test(r.textContent)) || rows[0];
+      const col = name => ths.findIndex(x=>x.startsWith(name));
+      const pick = [["Berat","berat","kg"],["Lean mass","lean","kg"],["Body fat","bf","%"],["Perut","perut","cm"]];
+      h += `<p class="lede">Scan terakhir ${esc(last.cells[0].textContent.trim().split(" ")[0])}${last!==base?", dibanding baseline "+esc(base.cells[0].textContent.trim()):""}.</p><div class="stats">`;
+      let perut = null;
+      for (const [lbl,key,u] of pick){
+        const i = col(key); if (i<0) continue;
+        const v = num(last.cells[i].textContent), b = num(base.cells[i].textContent);
+        if (key==="perut") perut = v;
+        const d = (v!==null && b!==null && last!==base) ? v-b : null;
+        h += `<div class="st"><small>${lbl}</small><b>${v!==null?fmt(v):"–"}${u==="%"?"%":" "+u}</b>${d!==null?`<em>${d>0?"+":""}${fmt(d)} ${u==="%"?"poin":u}</em>`:""}</div>`;
+      }
+      h += `</div>`;
+      if (perut && rem){
+        const lo = num(base.cells[col("perut")].textContent) - 2, pct = Math.min(100, Math.max(0, (perut-lo)/(rem-lo)*100));
+        h += `<div class="meter"><div class="track"><div class="fill ${pct>85?"stop":pct>60?"warn":""}" style="width:${pct}%"></div></div><div class="lbl"><span>Lingkar perut ${fmt(perut)} cm</span><span>Rem ${fmt(rem)} cm</span></div></div>`;
+      }
+    }
+  }
+
+  h += `<p class="callout">Detail lengkap ada di tab Program, Keputusan, dan Tubuh.<br><button class="go" data-go="program">Buka program →</button></p>`;
+  h += `<p class="foot">Dihitung otomatis dari program.md dan body.md. Minggu sekarang diambil dari baris “Siklus N mulai Senin, …” di status program.</p>`;
+  view.innerHTML = h;
+  view.querySelectorAll("[data-go]").forEach(b=>b.addEventListener("click",()=>go(b.dataset.go)));
+}
+
+/* ---------- tab markdown ---------- */
+async function show(key){
+  document.querySelectorAll("nav button").forEach(b=>b.setAttribute("aria-selected", String(b.dataset.f===key)));
+  view.innerHTML = '<p class="msg">Memuat…</p>';
+  document.title = "Program Gym · " + TAB_NAMES[key];
+  if (key === "home"){
+    const [p, b] = await Promise.all([load("program"), load("body")]);
+    if (p === null){ view.innerHTML = '<p class="msg">program.md belum ada di repo.</p>'; return; }
+    try { renderHome(p, b); } catch(e){ console.error(e); view.innerHTML = '<p class="msg">Ringkasan gagal dibaca. Buka tab Program.</p>'; }
+    return;
+  }
+  const md = await load(key);
+  if (md === null){ view.innerHTML = `<p class="msg">${FILES[key]} belum ada di repo.</p>`; return; }
+  view.innerHTML = marked.parse(md);
+  const info = key === "program" ? cycleInfo(md) : (cache.program ? cycleInfo(cache.program) : null);
+  decorate(view, info);
   view.querySelectorAll('a[href$=".md"]').forEach(a=>{
     const k = Object.keys(FILES).find(x=>FILES[x]===a.getAttribute("href"));
     if (k) a.addEventListener("click", e=>{ e.preventDefault(); go(k); });
@@ -101,17 +389,15 @@ async function show(key){
   const f = document.createElement("p"); f.className = "foot";
   f.textContent = "Sumber: " + FILES[key] + " di repo. Edit file .md lalu push untuk memperbarui halaman ini.";
   view.appendChild(f);
-  document.title = "Program Gym · " + document.querySelector(`nav button[data-f="${key}"]`).textContent;
 }
 
 function go(key){
   if (location.hash !== "#" + key) history.replaceState(null, "", "#" + key);
   show(key); window.scrollTo(0,0);
 }
-
 document.querySelectorAll("nav button").forEach(b=>b.addEventListener("click", ()=>go(b.dataset.f)));
 const start = location.hash.slice(1);
-show(FILES[start] ? start : "program");
+show(TAB_NAMES[start] ? start : "home");
 </script>
 </body>
 </html>
