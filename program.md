@@ -8,7 +8,7 @@ Prioritas: kekuatan squat, bench, deadlift dulu, lalu ukuran otot.
 - **Versi yang dijalankan: Versi B** (Upper/Lower + sesi teknik). Versi A tetap dicatat sebagai alternatif; beban hari berat keduanya identik, jadi bisa pindah kapan saja tanpa hitung ulang.
 - **Estimasi 1RM** (dari log minggu 4): Squat ±85 kg (72,5 × 5) · Bench ±76 kg (65 × 5) · Deadlift ±112,5 kg (102,5 × 3). Deadlift 4×3 tidak dibawa sampai mentok, jadi angka formulanya cenderung di bawah kemampuan asli. Hitung ulang di minggu 11 dari log minggu 9.
 - **Jadwal harian:** tidur 22.00–04.30 (±6,5 jam), latihan 06.00–07.30.
-- **Nutrisi:** lean bulk 4 bulan, mulai 2500 kkal. Detail di [body.md](body.md).
+- **Nutrisi:** lean bulk 4 bulan, 2650 kkal mulai 19-10-2026 (sebelumnya 2500). Detail di [body.md](body.md).
 
 ## Rencana hari berat
 

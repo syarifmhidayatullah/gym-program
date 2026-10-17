@@ -15,9 +15,9 @@ Setelah bulk: cutting 8–10 minggu ke ±67–68 kg di body fat 15–16%, atau m
 
 ## Kalori & makro
 
-- **Mulai 2500 kkal/hari** selama 2 minggu (maintenance ±2400, dari TEE scan 2405).
+- **Sekarang: 2650 kkal/hari mulai Senin, 19 Oktober 2026** (naik dari 2500 setelah scan 10-10: berat turun 0,6 kg dalam 3 minggu). Maintenance ±2400 (TEE scan 2368–2405).
 - **Protein 140–150 g** (±2 g/kg) · **lemak 70–80 g** · **karbohidrat 305–320 g**.
-- Kalau naik ke 2650 kkal: karbohidrat jadi ±350–370 g.
+- Di 2650 kkal: karbohidrat ±350–370 g (protein & lemak tetap). Tambahannya dari nasi, oat, roti, pisang.
 - **Hari boxing:** tambah 150–250 kkal.
 
 ## Aturan penyesuaian (evaluasi tiap 2 minggu)
@@ -34,7 +34,7 @@ Setelah bulk: cutting 8–10 minggu ke ±67–68 kg di body fat 15–16%, atau m
 - **Timbang:** pagi setelah bangun, setelah ke kamar mandi, sebelum makan & minum. 3–4× seminggu, yang dibaca rata-rata mingguan (berat harian bisa goyang 0,5–1 kg).
 - **Lingkar perut:** meteran kain setinggi pusar, pagi setelah bangun. Ukuran paling bisa dipercaya karena tidak terpengaruh cairan atau creatine.
 - **Foto** tiap 2–4 minggu, kondisi yang sama.
-- **Scan Evolt:** kondisi sama seperti 19-09 (bangun tidur, sudah BAB/BAK, belum makan & minum). Berikutnya di **bulan ke-2 bulk** untuk cek apakah yang bertambah memang otot.
+- **Scan Evolt:** kondisi sama seperti 19-09 (bangun tidur, sudah BAB/BAK, belum makan & minum). Berikutnya **±21 November 2026** (bulan ke-2 bulk) untuk cek apakah yang bertambah memang otot.
 - **Noise alat ±0,3–0,5 kg.** Perubahan lean mass di bawah 0,5 kg jangan dianggap berarti.
 
 ## Riwayat scan Evolt 360
@@ -43,8 +43,11 @@ Setelah bulk: cutting 8–10 minggu ke ±67–68 kg di body fat 15–16%, atau m
 |---|---|---|---|---|---|---|---|---|
 | 17-09-2026 | Setelah gym, sudah minum air & creatine | 68,4 kg | 55,6 kg | 31,0 kg | 12,8 kg | 18,7% | 82,6 cm | 2417 kkal |
 | **19-09-2026** | **Standar (baseline)** | **67,9 kg** | **55,2 kg** | **30,8 kg** | **12,7 kg** | **18,7%** | **82,5 cm** | **2405 kkal** |
+| 10-10-2026 06:44 | Pagi (kondisi puasa/BAB belum dikonfirmasi) | 67,3 kg | 54,1 kg | 30,1 kg | 13,2 kg | 19,6% | 83,2 cm | 2368 kkal |
 
 Catatan baseline 19-09: visceral fat level 9 (normal), lemak torso sedikit di atas rentang (6,86 kg) sementara lengan dan kaki optimal, rasio pinggang-pinggul 0,88, BMR 1562 kkal. Dua scan hampir identik, jadi kondisi setelah gym ternyata tidak banyak mendistorsi hasil.
+
+Catatan scan 10-10 (vs baseline): berat −0,6 kg, lean mass −1,1 kg, lemak +0,5 kg, perut +0,7 cm, lemak torso 7,21 kg (dari 6,86). Lean mass turun di saat squat, bench, dan deadlift semuanya naik tiap minggu, jadi kemungkinan besar efek cairan/glikogen di alat BIA, bukan otot yang hilang. Yang pasti: berat tidak naik, berarti 2500 kkal belum surplus.
 
 ## Suplemen
 

@@ -33,6 +33,7 @@ Catatan supaya keputusan lama tidak diusulkan ulang tanpa alasan baru. Tambahkan
 
 - **Lean bulk dulu, bukan cutting.** Body fat 18,7% masih di rentang optimal, lingkar perut 82,5 cm (rasio ke tinggi 0,49), visceral fat normal. Prioritas strength dan tidur 6,5 jam juga membuat defisit kurang cocok sekarang. Angka dan aturan pemantauan ada di [body.md](body.md).
 - **Kalori lebih rendah dari rekomendasi aplikasi Evolt** (2805–2905 kkal dan protein 210–218 g). Surplus 400–500 kkal di level intermediate lebih banyak jadi lemak; protein ±2 g/kg sudah cukup.
+- **Kalori naik 2500 → 2650 kkal (mulai 19-10-2026).** Scan 10-10: berat turun 0,6 kg dalam 3 minggu bulk, padahal target +0,2–0,3 kg/minggu, jadi aturan "naik < 0,2 kg/minggu" terpenuhi. Penurunan lean mass 1,1 kg di scan dianggap efek cairan karena semua lift utama naik selama periode itu.
 - **Bulk 4 bulan, bukan lebih lama.** Bulk panjang cenderung cuma menumpuk lemak di akhir.
 - **Suplemen: cukup creatine monohydrate 3–5 g/hari**, plus protein powder kalau target protein susah dikejar dari makanan. BCAA, glutamine, ZMA, beta-alanine, maltodextrin dari daftar Evolt tidak perlu.
 
