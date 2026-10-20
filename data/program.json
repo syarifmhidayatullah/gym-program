@@ -1,0 +1,210 @@
+{
+  "_doc": "Template program per versi. Beban di sini adalah beban AWAL; beban berjalan ada di cycles.json. id latihan unik per versi. id lift utama (squat-heavy, bench-heavy, dead-heavy, squat-light, bench-volume, squat-volume) sama antarversi supaya beban mingguan berlaku di versi mana pun. lift: S/B/D (warna), main: baris tebal + titik di jadwal, heavy: kartu besar di Ringkas, ss: bagian superset, opt: opsional.",
+  "default": "B",
+  "versions": [
+    {
+      "id": "B",
+      "name": "Upper/Lower + sesi teknik",
+      "freq": "Squat 3× · Bench 3× · Deadlift 2× per minggu. Rabu & Minggu libur.",
+      "notes": [],
+      "days": [
+        {
+          "day": "Senin", "name": "Lower A", "focus": "squat berat",
+          "ex": [
+            {"id": "squat-heavy", "name": "Back Squat", "lift": "S", "main": true, "heavy": true, "sets": "5×5", "int": "75–80%", "rest": "3–4 mnt", "start": "65 kg"},
+            {"id": "sen-rdl", "name": "Romanian Deadlift", "sets": "3×8", "int": "RPE 7", "rest": "2–3 mnt", "start": "60 kg"},
+            {"id": "sen-legpress", "name": "Leg Press / Hack Squat", "sets": "3×8–10", "int": "RPE 8", "rest": "2 mnt", "start": "110 kg / ±40–50 kg"},
+            {"id": "sen-legcurl", "name": "Leg Curl", "sets": "3×10–12", "int": "RPE 8", "rest": "1–2 mnt", "start": "70 kg"},
+            {"id": "sen-calf", "name": "Calf Raise", "sets": "4×12–15", "int": "RPE 8", "rest": "1 mnt", "start": "40 kg"},
+            {"id": "sen-abd", "name": "Hip Abduction", "opt": true, "sets": "2–3×15", "int": "RPE 8", "rest": "1 mnt", "start": "50 kg"},
+            {"id": "sen-add", "name": "Hip Adduction", "opt": true, "sets": "2–3×15", "int": "RPE 8", "rest": "1 mnt", "start": "23 kg"}
+          ]
+        },
+        {
+          "day": "Selasa", "name": "Upper A", "focus": "bench berat",
+          "ex": [
+            {"id": "bench-heavy", "name": "Bench Press", "lift": "B", "main": true, "heavy": true, "sets": "5×3–5", "int": "80–85%", "rest": "3–4 mnt", "start": "62,5 kg"},
+            {"id": "sel-row", "name": "Barbell Row / T-Bar Row", "sets": "4×6–8", "int": "RPE 8", "rest": "2 mnt", "start": "50 kg / ±25 kg plate"},
+            {"id": "sel-incline", "name": "Incline DB Press", "sets": "3×8–10", "int": "RPE 8", "rest": "2 mnt", "start": "20 kg/tangan"},
+            {"id": "sel-pulldown", "name": "Pull-up / Lat Pulldown", "sets": "3×8–10", "int": "RPE 8", "rest": "2 mnt", "start": "55 kg"},
+            {"id": "sel-lateral", "name": "Lateral Raise", "sets": "3×12–15", "int": "RPE 8–9", "rest": "1 mnt", "start": "7 kg/tangan"},
+            {"id": "sel-curl", "name": "Cable Curl", "ss": true, "sets": "3×10–12", "int": "RPE 8", "rest": "1 mnt", "start": "±20 kg"},
+            {"id": "sel-ohe", "name": "Triceps Overhead Extension", "ss": true, "sets": "3×10–12", "int": "RPE 8", "rest": "1 mnt", "start": "30 kg"}
+          ],
+          "note": "Angka T-bar adalah total plate yang dipasang, catat terpisah dari barbell. Kalau punggung bawah masih berat dari Senin, ganti row dengan chest-supported row atau seated cable row (55 kg). Cable curl boleh diganti Bayesian curl satu tangan (±7–10 kg)."
+        },
+        {
+          "day": "Kamis", "name": "Lower B", "focus": "deadlift berat, squat ringan",
+          "ex": [
+            {"id": "dead-heavy", "name": "Deadlift", "lift": "D", "main": true, "heavy": true, "sets": "4×3", "int": "80–85%", "rest": "3–4 mnt", "start": "95 kg"},
+            {"id": "squat-light", "name": "Back Squat", "lift": "S", "main": true, "sets": "3×6", "int": "65–70%", "rest": "2–3 mnt", "start": "57,5 kg"},
+            {"id": "kam-bss", "name": "Bulgarian Split Squat", "sets": "3×8–10 per kaki", "int": "RPE 8", "rest": "2 mnt", "start": "10 kg/tangan"},
+            {"id": "kam-legext", "name": "Leg Extension", "sets": "3×12–15", "int": "RPE 8", "rest": "1–2 mnt", "start": "70 kg"},
+            {"id": "kam-calf", "name": "Calf Raise", "sets": "3×12–15", "int": "RPE 8", "rest": "1 mnt", "start": "40 kg"},
+            {"id": "kam-abs", "name": "Ab Wheel / Leg Raise", "sets": "3×10–15", "int": "", "rest": "1 mnt", "start": "Bodyweight"}
+          ],
+          "note": "Sesi paling berat dalam seminggu. Squat di sini naik hanya mengikuti squat Senin, jangan dikejar sendiri."
+        },
+        {
+          "day": "Jumat", "name": "Upper B", "focus": "bench volume",
+          "ex": [
+            {"id": "bench-volume", "name": "Bench Press", "lift": "B", "main": true, "sets": "4×6–8", "int": "70–75%", "rest": "2–3 mnt", "start": "55 kg"},
+            {"id": "jum-ohp", "name": "Seated DB Shoulder Press", "sets": "3×8–10", "int": "RPE 8", "rest": "2 mnt", "start": "17,5 kg/tangan"},
+            {"id": "jum-csrow", "name": "Chest-Supported Row (mesin / incline DB)", "sets": "3×8–10", "int": "RPE 8", "rest": "2 mnt", "start": "±50 kg / 15 kg/tangan"},
+            {"id": "jum-pulldown", "name": "Lat Pulldown", "sets": "3×10–12", "int": "RPE 8", "rest": "2 mnt", "start": "50 kg"},
+            {"id": "jum-reardelt", "name": "Rear Delt Fly", "sets": "3×12–15", "int": "RPE 8–9", "rest": "1 mnt", "start": "50 kg"},
+            {"id": "jum-curl", "name": "Biceps Curl", "ss": true, "sets": "3×10–12", "int": "RPE 8", "rest": "1 mnt", "start": "10 kg/tangan"},
+            {"id": "jum-pushdown", "name": "Triceps Pushdown", "ss": true, "sets": "3×10–12", "int": "RPE 8", "rest": "1 mnt", "start": "±30 kg"}
+          ]
+        },
+        {
+          "day": "Sabtu", "name": "Full Body Ringan", "focus": "teknik, ±45 menit",
+          "ex": [
+            {"id": "pause-squat", "name": "Pause Squat (diam 2 detik di bawah)", "lift": "S", "main": true, "sets": "3×3", "int": "60–65%", "rest": "2 mnt", "start": "52,5 kg"},
+            {"id": "paused-bench", "name": "Paused Bench (diam 1–2 detik di dada)", "lift": "B", "main": true, "sets": "3×3", "int": "65–70%", "rest": "2 mnt", "start": "50 kg"},
+            {"id": "speed-dead", "name": "Deadlift fokus kecepatan (atau sumo ringan)", "lift": "D", "main": true, "sets": "5×2", "int": "60–65%", "rest": "1–2 mnt", "start": "70 kg (sumo: 60 kg)"},
+            {"id": "sab-lateral", "name": "Lateral Raise", "sets": "3×15", "int": "RPE 7", "rest": "1 mnt", "start": "5 kg/tangan"},
+            {"id": "sab-hammer", "name": "Hammer Curl", "sets": "3×12", "int": "RPE 7", "rest": "1 mnt", "start": "10 kg/tangan"}
+          ],
+          "note": "Semua set harus terasa enteng. Kalau bar melambat atau teknik berubah, berhenti; tidak perlu menyelesaikan semua set."
+        }
+      ]
+    },
+    {
+      "id": "A",
+      "name": "Split terpisah",
+      "freq": "Squat 2× · Bench 2× · Deadlift 1× per minggu. Sabtu & Minggu libur.",
+      "notes": ["Alternatif. Beban hari berat identik dengan Versi B, jadi bisa pindah kapan saja tanpa hitung ulang."],
+      "days": [
+        {
+          "day": "Senin", "name": "Leg A", "focus": "squat berat",
+          "ex": [
+            {"id": "squat-heavy", "name": "Back Squat", "lift": "S", "main": true, "heavy": true, "sets": "5×5", "int": "75–80%", "rest": "3–4 mnt", "start": "65 kg"},
+            {"id": "sen-pause-squat", "name": "Pause Squat (jeda 2 detik)", "lift": "S", "main": true, "sets": "3×4", "int": "60–65%", "rest": "2–3 mnt", "start": "52,5 kg"},
+            {"id": "sen-legcurl", "name": "Leg Curl", "sets": "3×10–12", "int": "RPE 8", "rest": "1–2 mnt", "start": "70 kg"},
+            {"id": "sen-legext", "name": "Leg Extension", "sets": "3×10–12", "int": "RPE 8", "rest": "1–2 mnt", "start": "70 kg"},
+            {"id": "sen-calf", "name": "Calf Raise", "sets": "4×12–15", "int": "RPE 8", "rest": "1 mnt", "start": "40 kg"},
+            {"id": "sen-legraise", "name": "Leg Raise", "sets": "3×12–15", "int": "", "rest": "1 mnt", "start": "Bodyweight"},
+            {"id": "sen-abd", "name": "Hip Abduction", "opt": true, "sets": "2–3×15", "int": "RPE 8", "rest": "1 mnt", "start": "50 kg"},
+            {"id": "sen-add", "name": "Hip Adduction", "opt": true, "sets": "2–3×15", "int": "RPE 8", "rest": "1 mnt", "start": "23 kg"}
+          ],
+          "note": "Latihan opsional dikerjakan paling akhir dan yang pertama dipotong kalau waktu mepet."
+        },
+        {
+          "day": "Selasa", "name": "Push", "focus": "bench berat",
+          "ex": [
+            {"id": "bench-heavy", "name": "Bench Press", "lift": "B", "main": true, "heavy": true, "sets": "5×3–5", "int": "80–85%", "rest": "3–4 mnt", "start": "62,5 kg"},
+            {"id": "sel-cgbench", "name": "Close-Grip Bench", "lift": "B", "main": true, "sets": "3×6–8", "int": "±70%", "rest": "2–3 mnt", "start": "50 kg"},
+            {"id": "sel-incline", "name": "Incline DB Press", "sets": "3×8–10", "int": "RPE 8", "rest": "2 mnt", "start": "20 kg/tangan"},
+            {"id": "sel-lateral", "name": "Lateral Raise", "sets": "4×12–15", "int": "RPE 8–9", "rest": "1 mnt", "start": "7 kg/tangan"},
+            {"id": "sel-ohe", "name": "Triceps Overhead Extension", "sets": "3×10–12", "int": "RPE 8", "rest": "1–2 mnt", "start": "30 kg"}
+          ],
+          "note": "Triceps: kalau stack tidak ada 30 kg, pakai pin terdekat di atas 27 kg."
+        },
+        {
+          "day": "Rabu", "name": "Pull", "focus": "deadlift berat",
+          "ex": [
+            {"id": "dead-heavy", "name": "Deadlift", "lift": "D", "main": true, "heavy": true, "sets": "4×3", "int": "80–85%", "rest": "3–4 mnt", "start": "95 kg"},
+            {"id": "rab-cablerow", "name": "Seated Cable Row", "sets": "4×8–10", "int": "RPE 8", "rest": "2 mnt", "start": "55 kg"},
+            {"id": "rab-pulldown", "name": "Lat Pulldown / Pull-up", "sets": "3×8–10", "int": "RPE 8", "rest": "2 mnt", "start": "55 kg"},
+            {"id": "rab-reardelt", "name": "Rear Delt Fly", "sets": "3×12–15", "int": "RPE 8–9", "rest": "1 mnt", "start": "50 kg"},
+            {"id": "rab-hammer", "name": "Hammer Curl", "sets": "3×10–12", "int": "RPE 8", "rest": "1–2 mnt", "start": "12,5 kg/tangan"}
+          ],
+          "note": "Kalau row/pulldown tidak ada pin 55 kg, pakai 60 kg dengan target minimal 8 rep."
+        },
+        {
+          "day": "Kamis", "name": "Upper", "focus": "bench volume",
+          "ex": [
+            {"id": "bench-volume", "name": "Bench Press", "lift": "B", "main": true, "sets": "4×6–8", "int": "70–75%", "rest": "2–3 mnt", "start": "55 kg"},
+            {"id": "kam-csrow", "name": "Chest-Supported Row (mesin / incline DB)", "sets": "3×8–10", "int": "RPE 8", "rest": "2 mnt", "start": "±50 kg / 15 kg/tangan"},
+            {"id": "kam-ohp", "name": "Seated DB Shoulder Press", "sets": "3×8–10", "int": "RPE 8", "rest": "2 mnt", "start": "17,5 kg/tangan"},
+            {"id": "kam-pulldown", "name": "Pull-up / Lat Pulldown (grip beda)", "sets": "3×10–12", "int": "RPE 8", "rest": "2 mnt", "start": "50 kg"},
+            {"id": "kam-lateral", "name": "Lateral Raise", "sets": "3×12–15", "int": "RPE 8–9", "rest": "1 mnt", "start": "7 kg/tangan"},
+            {"id": "kam-pushdown", "name": "Triceps Pushdown", "sets": "3×10–12", "int": "RPE 8", "rest": "1 mnt", "start": "±30 kg"},
+            {"id": "kam-curl", "name": "Biceps Curl", "sets": "3×10–12", "int": "RPE 8", "rest": "1 mnt", "start": "10 kg/tangan"}
+          ],
+          "note": "Chest-supported row: utamakan mesin duduk; incline DB row (bench 30–45°) kalau mesin penuh. Dada tetap menempel di bantalan. Catat versi mesin dan dumbbell terpisah. Shoulder press: kalau set terakhir di bawah 8 rep, turun ke 15 kg."
+        },
+        {
+          "day": "Jumat", "name": "Leg B", "focus": "squat volume",
+          "ex": [
+            {"id": "squat-volume", "name": "Back Squat", "lift": "S", "main": true, "sets": "4×6–8", "int": "70–75%", "rest": "2–3 mnt", "start": "62,5 kg"},
+            {"id": "jum-rdl", "name": "Romanian Deadlift", "sets": "3×8", "int": "RPE 7", "rest": "2–3 mnt", "start": "60 kg"},
+            {"id": "jum-legpress", "name": "Leg Press / Hack Squat", "sets": "3×10–12", "int": "RPE 8", "rest": "2 mnt", "start": "110 kg / ±40–50 kg"},
+            {"id": "jum-legcurl", "name": "Leg Curl", "sets": "3×10–12", "int": "RPE 8", "rest": "1–2 mnt", "start": "70 kg"},
+            {"id": "jum-calf", "name": "Calf Raise", "sets": "4×12–15", "int": "RPE 8", "rest": "1 mnt", "start": "40 kg"},
+            {"id": "jum-abs", "name": "Ab Wheel / Leg Raise", "sets": "3×10–15", "int": "", "rest": "1 mnt", "start": "Bodyweight"}
+          ],
+          "note": "Hack squat jauh lebih ringan dari leg press: mulai ±40–50 kg di luar berat sledge, jangan dibawa sampai mentok."
+        }
+      ]
+    },
+    {
+      "id": "C",
+      "name": "Murni hypertrophy",
+      "freq": "Squat 1× · Bench 1× · Deadlift 0× per minggu (diganti RDL). Rabu & Minggu libur.",
+      "notes": [
+        "Bukan program utama. Fase selingan 6–8 minggu kalau lift utama stagnan atau sendi butuh istirahat (misalnya setelah 3–4 siklus Versi B), lalu kembali ke A atau B.",
+        "Tidak ada rencana persentase mingguan. Semua latihan, termasuk squat dan bench, pakai double progression.",
+        "Compound di RPE 8–9; set terakhir latihan mesin dan isolasi boleh sampai gagal.",
+        "Rest lebih pendek: 2–3 mnt compound, 1 mnt isolasi.",
+        "Konsekuensi: ukuran otot naik paling cepat, tapi 1RM paling lambat dan bisa turun sedikit. Kalau balik ke A/B, beban berat butuh 2–3 minggu untuk terasa nyaman lagi."
+      ],
+      "days": [
+        {
+          "day": "Senin", "name": "Upper", "focus": "dada, punggung, lengan",
+          "ex": [
+            {"id": "sen-bench", "name": "Bench Press", "lift": "B", "main": true, "sets": "4×6–8", "int": "±72%", "rest": "2–3 mnt", "start": "55 kg"},
+            {"id": "sen-csrow", "name": "Chest-Supported Row (mesin / incline DB)", "sets": "3×8–10", "int": "RPE 8–9", "rest": "2 mnt", "start": "±50 kg / 15 kg/tangan"},
+            {"id": "sen-pulldown", "name": "Lat Pulldown", "sets": "3×10–12", "int": "RPE 8–9", "rest": "2 mnt", "start": "50 kg"},
+            {"id": "sen-lateral", "name": "Lateral Raise", "sets": "4×12–15", "int": "set akhir gagal", "rest": "1 mnt", "start": "7 kg/tangan"},
+            {"id": "sen-curl", "name": "Cable Curl", "ss": true, "sets": "3×10–12", "int": "set akhir gagal", "rest": "1 mnt", "start": "±20 kg"},
+            {"id": "sen-pushdown", "name": "Triceps Pushdown", "ss": true, "sets": "3×10–12", "int": "set akhir gagal", "rest": "1 mnt", "start": "±30 kg"}
+          ]
+        },
+        {
+          "day": "Selasa", "name": "Lower", "focus": "paha depan & hamstring",
+          "ex": [
+            {"id": "sel-squat", "name": "Back Squat", "lift": "S", "main": true, "sets": "3×6–8", "int": "±70%", "rest": "2–3 mnt", "start": "60 kg"},
+            {"id": "sel-rdl", "name": "Romanian Deadlift", "sets": "3×8–10", "int": "RPE 8", "rest": "2 mnt", "start": "60 kg"},
+            {"id": "sel-legpress", "name": "Leg Press / Hack Squat", "sets": "3×10–12", "int": "RPE 8–9", "rest": "2 mnt", "start": "110 kg / ±40–50 kg"},
+            {"id": "sel-legcurl", "name": "Leg Curl", "sets": "3×10–12", "int": "set akhir gagal", "rest": "1–2 mnt", "start": "70 kg"},
+            {"id": "sel-calf", "name": "Calf Raise", "sets": "4×12–15", "int": "set akhir gagal", "rest": "1 mnt", "start": "40 kg"}
+          ]
+        },
+        {
+          "day": "Kamis", "name": "Push", "focus": "dada atas, bahu, triceps",
+          "ex": [
+            {"id": "kam-incline", "name": "Incline DB Press", "sets": "4×8–10", "int": "RPE 8–9", "rest": "2 mnt", "start": "20 kg/tangan"},
+            {"id": "kam-ohp", "name": "Seated DB Shoulder Press", "sets": "3×8–10", "int": "RPE 8–9", "rest": "2 mnt", "start": "17,5 kg/tangan"},
+            {"id": "kam-fly", "name": "Cable Chest Fly", "sets": "3×12–15", "int": "set akhir gagal", "rest": "1 mnt", "start": "45 kg"},
+            {"id": "kam-lateral", "name": "Lateral Raise", "sets": "4×12–15", "int": "set akhir gagal", "rest": "1 mnt", "start": "7 kg/tangan"},
+            {"id": "kam-ohe", "name": "Triceps Overhead Extension", "sets": "3×10–12", "int": "set akhir gagal", "rest": "1 mnt", "start": "30 kg"}
+          ]
+        },
+        {
+          "day": "Jumat", "name": "Pull", "focus": "lebar & ketebalan punggung, biceps",
+          "ex": [
+            {"id": "jum-pulldown", "name": "Lat Pulldown / Pull-up", "sets": "4×8–10", "int": "RPE 8–9", "rest": "2 mnt", "start": "55 kg"},
+            {"id": "jum-row", "name": "T-Bar Row / Barbell Row", "sets": "3×8–10", "int": "RPE 8", "rest": "2 mnt", "start": "±25 kg plate / 45 kg"},
+            {"id": "jum-cablerow", "name": "Seated Cable Row", "sets": "3×10–12", "int": "RPE 8–9", "rest": "1–2 mnt", "start": "50 kg"},
+            {"id": "jum-reardelt", "name": "Rear Delt Fly", "sets": "3×12–15", "int": "set akhir gagal", "rest": "1 mnt", "start": "50 kg"},
+            {"id": "jum-curl", "name": "Biceps Curl", "sets": "3×10–12", "int": "set akhir gagal", "rest": "1 mnt", "start": "10 kg/tangan"},
+            {"id": "jum-hammer", "name": "Hammer Curl", "sets": "2×10–12", "int": "set akhir gagal", "rest": "1 mnt", "start": "12,5 kg/tangan"}
+          ]
+        },
+        {
+          "day": "Sabtu", "name": "Legs", "focus": "paha depan & glute",
+          "ex": [
+            {"id": "sab-hack", "name": "Hack Squat / Leg Press", "sets": "4×8–12", "int": "RPE 8–9", "rest": "2 mnt", "start": "±40–50 kg / 110 kg"},
+            {"id": "sab-bss", "name": "Bulgarian Split Squat", "sets": "3×10 per kaki", "int": "RPE 8", "rest": "2 mnt", "start": "10 kg/tangan"},
+            {"id": "sab-legext", "name": "Leg Extension", "sets": "3×12–15", "int": "set akhir gagal", "rest": "1 mnt", "start": "70 kg"},
+            {"id": "sab-legcurl", "name": "Leg Curl", "sets": "3×10–12", "int": "set akhir gagal", "rest": "1 mnt", "start": "70 kg"},
+            {"id": "sab-calf", "name": "Calf Raise", "sets": "4×12–15", "int": "set akhir gagal", "rest": "1 mnt", "start": "40 kg"},
+            {"id": "sab-abd", "name": "Hip Abduction", "opt": true, "sets": "2–3×15", "int": "set akhir gagal", "rest": "1 mnt", "start": "50 kg"}
+          ]
+        }
+      ]
+    }
+  ]
+}

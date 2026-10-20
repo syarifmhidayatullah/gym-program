@@ -15,7 +15,7 @@ Setelah bulk: cutting 8–10 minggu ke ±67–68 kg di body fat 15–16%, atau m
 
 ## Kalori & makro
 
-- **Sekarang: 2650 kkal/hari mulai Senin, 19 Oktober 2026** (naik dari 2500 setelah scan 10-10: berat turun 0,6 kg dalam 3 minggu). Maintenance ±2400 (TEE scan 2368–2405).
+- **Sekarang: 2650 kkal/hari mulai Senin, 19 Oktober 2026** (naik dari 2500 setelah scan 10-10: berat turun 0,6 kg dalam 3 minggu). Maintenance ±2400 (TEE scan 2368–2405). Angka yang ditampilkan halaman web ada di `data/body.json` bagian `nutrition`; kalau kalori berubah, perbarui keduanya.
 - **Protein 140–150 g** (±2 g/kg) · **lemak 70–80 g** · **karbohidrat 305–320 g**.
 - Di 2650 kkal: karbohidrat ±350–370 g (protein & lemak tetap). Tambahannya dari nasi, oat, roti, pisang.
 - **Asupan aktual (estimasi 17-10, tanpa hitung kalori): ±2100–2200 kkal, protein ±140 g.** Protein sudah cukup; yang kurang karbohidrat (nasi total ±2,5 centong/hari). Jadi 2500 kkal belum pernah benar-benar tercapai.
@@ -45,15 +45,7 @@ Setelah bulk: cutting 8–10 minggu ke ±67–68 kg di body fat 15–16%, atau m
 
 ## Riwayat scan Evolt 360
 
-| Tanggal | Kondisi | Berat | Lean mass | Otot rangka | Lemak | BF% | Perut | TEE |
-|---|---|---|---|---|---|---|---|---|
-| 17-09-2026 | Setelah gym, sudah minum air & creatine | 68,4 kg | 55,6 kg | 31,0 kg | 12,8 kg | 18,7% | 82,6 cm | 2417 kkal |
-| **19-09-2026** | **Standar (baseline)** | **67,9 kg** | **55,2 kg** | **30,8 kg** | **12,7 kg** | **18,7%** | **82,5 cm** | **2405 kkal** |
-| 10-10-2026 06:44 | Standar | 67,3 kg | 54,1 kg | 30,1 kg | 13,2 kg | 19,6% | 83,2 cm | 2368 kkal |
-
-Catatan baseline 19-09: visceral fat level 9 (normal), lemak torso sedikit di atas rentang (6,86 kg) sementara lengan dan kaki optimal, rasio pinggang-pinggul 0,88, BMR 1562 kkal. Dua scan hampir identik, jadi kondisi setelah gym ternyata tidak banyak mendistorsi hasil.
-
-Catatan scan 10-10 (vs baseline): berat −0,6 kg, lean mass −1,1 kg, lemak +0,5 kg, perut +0,7 cm, lemak torso 7,21 kg (dari 6,86). Lean mass turun di saat squat, bench, dan deadlift semuanya naik tiap minggu, jadi kemungkinan besar efek cairan/glikogen di alat BIA, bukan otot yang hilang. Yang pasti: berat tidak naik, berarti 2500 kkal belum surplus.
+Angka tiap scan (berat, lean mass, otot rangka, lemak, BF%, perut, TEE) beserta catatannya ada di [`data/body.json`](data/body.json) bagian `scans`, dan ditampilkan sebagai tabel di halaman web. Tambahkan scan baru sebagai entri di akhir daftar itu.
 
 ## Suplemen
 
