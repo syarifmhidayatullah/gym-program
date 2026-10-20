@@ -28,7 +28,7 @@ Setelah bulk: cutting 8–10 minggu ke ±67–68 kg di body fat 15–16%, atau m
 
 ## Aturan penyesuaian (evaluasi tiap 2 minggu)
 
-- Berat naik **< 0,2 kg/minggu** → naikkan ke 2650 kkal.
+- Berat naik **< 0,2 kg/minggu** → tambah ±150 kkal (½ centong nasi atau 1 pisang).
 - Berat naik **> 0,4 kg/minggu** → turunkan 150 kkal.
 - Target kenaikan **0,2–0,3 kg/minggu** (±3 kg dalam 4 bulan). Jangan menaikkan surplus untuk mempercepat; batas pertumbuhan otot itu biologis.
 - **Rem: lingkar perut 86 cm.** Kalau tembus sebelum bulan ke-4, hentikan surplus dan masuk maintenance.

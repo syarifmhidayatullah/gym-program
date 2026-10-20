@@ -49,6 +49,8 @@ Semua set lift utama harus enteng. Tambahan malam (pull-up/push-up) juga setenga
 
 \* Bench volume: double progression. Naik 2,5 kg hanya setelah 4×8 tuntas.
 
+Persentase di tabel Versi B adalah rentang awal. Di siklus 2, bench volume (57,5–62,5 kg ≈ 76–82% e1RM) dan squat Kamis (60–62,5 kg ≈ 71–74%) sedikit di atas rentang itu karena dibangun dari beban aktual siklus 1. Ini tetap sah selama set terakhir *berat tapi aman*; kalau set terakhir *mentok*, tahan beban.
+
 **Sabtu (teknik), siklus 2:** pause squat 55 kg 3×3 · paused bench 52,5 kg 3×3 · deadlift kecepatan 72,5 kg 5×2. Semua enteng.
 
 - Squat mundur satu langkah (70 kg). Set 4 minggu 4 yang cuma 3 rep dianggap faktor hari itu (capek/teknik), bukan mentok, karena set 5 masih tuntas 5 rep. Deadlift mundur satu langkah sesuai rencana (100 kg). Bench tidak mundur: 65 kg 5×5 sudah tuntas, jadi lanjut 67,5 kg 5×3.
@@ -118,6 +120,7 @@ Angka T-bar adalah total plate yang dipasang, catat terpisah dari barbell. Kalau
 | **Back Squat** | 3×6 | 65–70% | 2–3 mnt | 57,5 kg |
 | Bulgarian Split Squat | 3×8–10 per kaki | RPE 8 | 2 mnt | 10 kg/tangan |
 | Leg Extension | 3×12–15 | RPE 8 | 1–2 mnt | 70 kg |
+| Calf Raise | 3×12–15 | RPE 8 | 1 mnt | 40 kg |
 | Ab Wheel / Leg Raise | 3×10–15 | | 1 mnt | Bodyweight |
 
 Sesi paling berat dalam seminggu. Squat di sini naik hanya mengikuti squat Senin, jangan dikejar sendiri.
@@ -284,7 +287,7 @@ Squat 1× · Bench 1× · Deadlift 0× per minggu (diganti RDL). Rabu & Minggu l
 - **Bench 5×3–5:** mulai 5×3, tambah rep tiap sesi sampai 5×5, lalu naikkan beban dan kembali ke 5×3.
 - **Hari volume & aksesori:** double progression. Kalau semua set mencapai rep teratas, naikkan beban sesi berikutnya. Set terakhir aksesori boleh sampai gagal hanya untuk gerakan aman (mesin, curl, lateral raise, pushdown), bukan barbell compound.
 - **Hemat waktu (opsional):** aksesori mesin/isolasi (leg extension, leg curl, lateral raise, fly, curl, pushdown) boleh diganti dari 3 set RPE 8 jadi **2 set sampai gagal**. Lift utama dan compound berat tetap RPE 7–8.
-- **Deload:** minggu 1–4 membangun. Minggu 5: set dipotong setengah, beban ±60–70%. Minggu 6: hitung ulang e1RM. Kalau di minggu 4 badan terasa lelah terus, majukan deload.
+- **Deload:** tiap siklus 5 minggu: minggu 1–4 membangun, minggu 5 deload (set dipotong setengah, beban ±60–70%). Minggu pertama siklus berikutnya: hitung ulang e1RM dari log minggu ke-4 siklus sebelumnya. Kalau di minggu 4 badan terasa lelah terus, majukan deload.
 - **Estimasi 1RM:** beban × (1 + rep ÷ 30). Contoh 90 kg × 3 ≈ 99 kg.
 - **Kurang tidur / kerja berat:** tahan beban minggu itu, jangan paksa naik.
 
