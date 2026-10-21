@@ -14,6 +14,7 @@ Inti dari chat program latihan. Data harian (set, rep, beban) ada di aplikasi tr
 | [project-instructions.md](project-instructions.md) | Instruksi Claude Project "Progress Gym" | Saat cara kerja project diubah |
 | index.html + app.js | Halaman web, membaca `data/*.json` dan `.md` | Jarang |
 | [tools/check_data.py](tools/check_data.py) | Cek `data/*.json` sebelum commit | Jarang |
+| vendor/marked.min.js | Library marked v12.0.2 (Markdown → HTML), disimpan lokal supaya halaman tidak bergantung ke CDN | Hampir tidak pernah |
 
 ## Cara pakai di Claude Project
 
