@@ -42,7 +42,8 @@ nav button{font-weight:600;background:transparent;border:0;padding:6px 12px;curs
 nav button + button{border-left:2px solid var(--ink)}
 nav button[aria-selected="true"]{background:var(--ink);color:var(--bg)}
 nav button:focus-visible{outline-offset:-3px}
-@media (max-width:520px){.brand{display:none}nav{flex:1}nav button{flex:1;padding:8px 4px;font-size:.95rem}}
+@media (max-width:620px){.brand{display:none}nav{flex:1}nav button{flex:1;padding:8px 4px;font-size:.95rem}}
+@media (max-width:400px){nav button{padding:8px 2px;font-size:.8rem}}
 
 main{max-width:800px;margin:0 auto;padding:24px 16px 72px}
 h1,h2,h3{font-family:var(--display);font-weight:700;line-height:1.08;margin:0}
@@ -168,6 +169,12 @@ tr.muted td{color:var(--muted)}
 tr.base td{font-weight:600}
 .tag.ss{margin-left:6px;vertical-align:1px}
 .cyc-meta{color:var(--muted);margin:0 0 6px}
+.chips{display:flex;gap:6px;overflow-x:auto;margin:4px 0 16px;padding-bottom:4px;scrollbar-width:thin}
+.chips button{flex:none;text-align:left;background:var(--surface);border:2px solid var(--line);border-radius:6px;padding:7px 12px;cursor:pointer}
+.chips button:hover{border-color:var(--muted)}
+.chips button[aria-selected="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.chips strong{display:block;font-family:var(--display);font-size:1.15rem;line-height:1.1}
+.chips span{display:block;font-size:.78rem;opacity:.8;white-space:nowrap}
 details.alt > summary .tag{margin-left:4px}
 </style>
 </head>
@@ -176,6 +183,7 @@ details.alt > summary .tag{margin-left:4px}
   <span class="brand"><i style="--c:var(--squat)"></i><i style="--c:var(--bench)"></i><i style="--c:var(--dead)"></i>Program Gym</span>
   <nav role="tablist" aria-label="Bagian">
     <button role="tab" data-f="home" aria-selected="true">Ringkas</button>
+    <button role="tab" data-f="cycles" aria-selected="false">Siklus</button>
     <button role="tab" data-f="program" aria-selected="false">Program</button>
     <button role="tab" data-f="decisions" aria-selected="false">Keputusan</button>
     <button role="tab" data-f="body" aria-selected="false">Tubuh</button>

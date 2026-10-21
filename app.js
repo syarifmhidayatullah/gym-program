@@ -6,7 +6,7 @@ const SRC = {
   program: "data/program.json", cycles: "data/cycles.json", body: "data/body.json",
   "md:program": "program.md", "md:decisions": "decisions.md", "md:body": "body.md",
 };
-const TAB_NAMES = {home:"Ringkas", program:"Program", decisions:"Keputusan", body:"Tubuh"};
+const TAB_NAMES = {home:"Ringkas", cycles:"Siklus", program:"Program", decisions:"Keputusan", body:"Tubuh"};
 const MD_TAB = {"program.md":"program", "decisions.md":"decisions", "body.md":"body"};
 const LIFT = {S:"var(--squat)", B:"var(--bench)", D:"var(--dead)"};
 const LIFT_NAME = {S:"Squat", B:"Bench", D:"Deadlift"};
@@ -186,10 +186,9 @@ function cycleLoadsTable(P, c){
   rows.sort((a,b)=>DAYS.indexOf(a.day) - DAYS.indexOf(b.day));
   return `<h3>Beban tetap selama siklus</h3><div class="tw"><table><thead><tr><th>Hari</th><th>Latihan</th><th>Beban</th><th>Target</th></tr></thead><tbody>${rows.map(r=>`<tr class="${r.main ? "lift" : ""}" style="${r.lift ? "--c:" + LIFT[r.lift] : ""}"><td>${esc(r.day ? d3(r.day) : "")}</td><td>${esc(r.as || r.name)}${r.as ? `<small>${esc(r.name)}</small>` : ""}</td><td>${esc(r.load)}</td><td>${esc(r.target || "")}</td></tr>`).join("")}</tbody></table></div>`;
 }
-function cycleSection(P, c, cur, open){
-  const head = `Siklus ${c.n}`, meta = `Mulai Senin, ${fdate(c.startD, true)} · Versi ${esc(c.version)} · ${c.weeks.length} minggu (minggu ke-${c.weeks[0]?.g ?? "?"}–${c.weeks[c.weeks.length-1]?.g ?? "?"})`;
-  const body = `<p class="cyc-meta">${meta}</p>${cycleTable(P, c, cur)}${(c.notes || []).length ? `<ul>${c.notes.map(n=>`<li>${esc(n)}</li>`).join("")}</ul>` : ""}${cycleLoadsTable(P, c)}`;
-  return open ? `<h2>${head}</h2>${body}` : `<details class="alt"><summary><h2>${head}</h2><span class="tag">${frange(c.startD, c.end)}</span></summary>${body}</details>`;
+function cycleBody(P, c, cur){
+  const meta = `Mulai Senin, ${fdate(c.startD, true)} · Versi ${esc(c.version)} · ${c.weeks.length} minggu (minggu ke-${c.weeks[0]?.g ?? "?"}–${c.weeks[c.weeks.length-1]?.g ?? "?"})`;
+  return `<p class="cyc-meta">${meta}</p>${cycleTable(P, c, cur)}${(c.notes || []).length ? `<ul>${c.notes.map(n=>`<li>${esc(n)}</li>`).join("")}</ul>` : ""}${cycleLoadsTable(P, c)}`;
 }
 
 /* ---------- Ringkas ---------- */
@@ -216,20 +215,15 @@ function renderHome(P, C, B){
     h += `<p class="lede">${loc.next ? `Siklus ${loc.next.n} mulai Senin, ${fdate(loc.next.startD, true)}.` : `Siklus berikutnya belum ada di <code>data/cycles.json</code>. Kirim log minggu terakhir untuk menyusunnya.`}</p>`;
   }
 
-  // siklus berikutnya: tampil di minggu terakhir siklus, saat jeda, atau sebelum mulai
-  const last = loc.state === "in" && w.i === cur.weeks.length;
-  const nxt = loc.state === "in" ? (last ? loc.next : null) : loc.next;
-  if (nxt && nxt.weeks[0]){
-    const nv = version(P, nxt.version);
-    h += `<h2>Berikutnya: siklus ${nxt.n}</h2><p class="lede">Mulai Senin, ${fdate(nxt.startD, true)} · Versi ${esc(nv.id)} · ${weekTitle(nxt.weeks[0]).toLowerCase()}.</p>` + loadsBlock(P, nv, nxt.weeks[0]);
-  } else if (last){
+  // pengingat hanya di minggu terakhir siklus terakhir; beban siklus berikutnya cukup dilihat di tab Siklus
+  if (loc.state === "in" && w.i === cur.weeks.length && !loc.next){
     h += `<p class="callout">Siklus ${cur.n + 1} belum disusun. Kirim log minggu ke-${cur.weeks.filter(x=>x.type === "build").slice(-1)[0]?.g ?? ""} untuk menghitung bebannya.</p>`;
   }
 
   h += e1rmBlock(C);
   h += `<h2 id="jadwal">Jadwal seminggu</h2><div id="sched"></div>`;
   h += bodyBlock(B, true);
-  h += `<p class="callout">Detail lengkap ada di tab Program, Keputusan, dan Tubuh.<br><button class="go" data-go="program">Buka program →</button></p>`;
+  h += `<p class="callout">Riwayat dan rencana siklus ada di tab Siklus.<br><button class="go" data-go="cycles">Buka siklus →</button></p>`;
   h += `<p class="foot">Dihitung dari data/cycles.json, data/program.json, dan data/body.json. Minggu sekarang dihitung dari tanggal mulai siklus.</p>`;
   view.innerHTML = h;
   view.querySelectorAll("[data-go]").forEach(b=>b.addEventListener("click", ()=>go(b.dataset.go)));
@@ -285,17 +279,17 @@ function sessionCard(v, day, cycle, week, skipped){
   return h;
 }
 
-/* ---------- tab Program ---------- */
-function renderProgram(P, C, md){
-  const tl = timeline(C), t = today(), loc = locate(tl, t);
-  const cur = loc.cycle || null, ver = version(P, (cur || loc.prev || loc.next || {}).version);
-  let h = `<h1>Program</h1>`;
-  if (cur) h += cycleSection(P, cur, loc.week, true);
-  const future = tl.filter(c=>c.startD > t);
-  future.forEach(c=>{ h += cycleSection(P, c, null, true); });
-  const past = tl.filter(c=>c.end < t).reverse();
-  if (past.length){ h += `<h2>Riwayat siklus</h2>`; past.forEach(c=>{ h += cycleSection(P, c, null, false); }); }
-  if (!tl.length) h += `<p class="callout">Belum ada siklus di <code>data/cycles.json</code>.</p>`;
+/* ---------- tab Siklus ---------- */
+const CYC = {n:null};
+function renderCycles(P, C){
+  const tl = timeline(C), loc = locate(tl, today());
+  if (!tl.length){ view.innerHTML = `<h1>Siklus</h1><p class="callout">Belum ada siklus di <code>data/cycles.json</code>.</p>`; return; }
+  const def = (loc.cycle || loc.next || loc.prev).n;
+  if (!tl.some(c=>c.n === CYC.n)) CYC.n = def;
+  const c = tl.find(x=>x.n === CYC.n), wk = c === loc.cycle ? loc.week : null;
+  let h = `<h1>Siklus</h1><div class="chips" role="tablist" aria-label="Siklus">`;
+  h += tl.map(x=>`<button role="tab" data-n="${x.n}" aria-selected="${x === c}"><strong>Siklus ${x.n}</strong><span>${x === loc.cycle ? "sekarang" : frange(x.startD, x.end)}</span></button>`).join("");
+  h += `</div>` + cycleBody(P, c, wk);
 
   const e1 = [...((C && C.e1rm) || [])].sort((a,b)=>a.date < b.date ? 1 : -1);
   if (e1.length){
@@ -303,9 +297,17 @@ function renderProgram(P, C, md){
     h += e1.map(x=>`<tr><td>${fdate(parseDate(x.date), true)}</td><td>${kg(x.S)}</td><td>${kg(x.B)}</td><td>${kg(x.D)}</td><td>${kg((x.S||0)+(x.B||0)+(x.D||0))}</td><td><small>${esc(x.from || "")}</small></td></tr>`).join("");
     h += `</tbody></table></div>`;
   }
+  view.innerHTML = h;
+  view.querySelectorAll("[data-n]").forEach(b=>b.addEventListener("click", ()=>{ CYC.n = Number(b.dataset.n); renderCycles(P, C); foot("cycles"); }));
+  view.querySelector('.chips [aria-selected="true"]')?.scrollIntoView({block:"nearest", inline:"center"});
+}
 
-  h += `<h2>Versi program</h2>`;
-  for (const v of [ver, ...P.versions.filter(x=>x !== ver)]){
+/* ---------- tab Program ---------- */
+function renderProgram(P, C, md){
+  const loc = locate(timeline(C), today());
+  const ver = version(P, (loc.cycle || loc.prev || loc.next || {}).version);
+  let h = `<h1>Program</h1>`;
+    for (const v of [ver, ...P.versions.filter(x=>x !== ver)]){
     const body = `<p class="cyc-meta">${esc(v.freq || "")}</p>${(v.notes || []).length ? `<ul>${v.notes.map(n=>`<li>${esc(n)}</li>`).join("")}</ul>` : ""}${v.days.map(d=>`<article class="card">${sessionCard(v, d, null, null, false)}</article>`).join("")}`;
     h += v === ver
       ? `<h3 style="font-size:1.6rem;margin-top:8px">Versi ${v.id}: ${esc(v.name)} <span class="tag run">dijalankan</span></h3>${body}`
@@ -346,10 +348,10 @@ async function show(key){
   view.innerHTML = '<p class="msg">Memuat…</p>';
   document.title = "Program Gym · " + TAB_NAMES[key];
   try{
-    if (key === "home" || key === "program"){
+    if (key === "home" || key === "cycles" || key === "program"){
       const [P, C, B, md] = await Promise.all([load("program"), load("cycles"), key === "home" ? load("body") : null, key === "program" ? load("md:program") : null]);
       if (!P || !C){ view.innerHTML = '<p class="msg">data/program.json atau data/cycles.json tidak terbaca. Cek format JSON-nya.</p>'; return; }
-      key === "home" ? renderHome(P, C, B) : renderProgram(P, C, md);
+      key === "home" ? renderHome(P, C, B) : key === "cycles" ? renderCycles(P, C) : renderProgram(P, C, md);
     } else if (key === "body"){
       const [B, md] = await Promise.all([load("body"), load("md:body")]);
       renderBody(B, md);
@@ -359,8 +361,13 @@ async function show(key){
       decorate(view);
     }
   }catch(e){ console.error(e); view.innerHTML = '<p class="msg">Halaman gagal dirender. Buka console untuk detail.</p>'; return; }
+  foot(key);
+}
+function foot(key){
+  if (key === "home") return;
   const f = document.createElement("p"); f.className = "foot";
-  if (key !== "home"){ f.textContent = "Angka dari folder data/, penjelasan dari file .md. Edit lalu push untuk memperbarui halaman ini."; view.appendChild(f); }
+  f.textContent = "Angka dari folder data/, penjelasan dari file .md. Edit lalu push untuk memperbarui halaman ini.";
+  view.appendChild(f);
 }
 function go(key){
   if (location.hash !== "#" + key) history.replaceState(null, "", location.search + "#" + key);
