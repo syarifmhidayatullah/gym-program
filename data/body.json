@@ -12,6 +12,9 @@
      "note": "Visceral fat level 9 (normal), lemak torso sedikit di atas rentang (6,86 kg) sementara lengan dan kaki optimal, rasio pinggang-pinggul 0,88, BMR 1562 kkal. Hampir identik dengan scan 17-09, jadi kondisi setelah gym ternyata tidak banyak mendistorsi hasil."},
     {"date": "2026-10-10", "time": "06:44", "cond": "Standar", "standard": true,
      "weight": 67.3, "lean": 54.1, "smm": 30.1, "fat": 13.2, "bf": 19.6, "waist": 83.2, "tee": 2368,
-     "note": "Lemak torso 7,21 kg (dari 6,86). Lean mass turun di saat squat, bench, dan deadlift semuanya naik tiap minggu, jadi kemungkinan besar efek cairan/glikogen di alat BIA, bukan otot yang hilang. Yang pasti: berat tidak naik, berarti 2500 kkal belum surplus."}
+     "note": "Lemak torso 7,21 kg (dari 6,86). Lean mass turun di saat squat, bench, dan deadlift semuanya naik tiap minggu, jadi kemungkinan besar efek cairan/glikogen di alat BIA, bukan otot yang hilang. Yang pasti: berat tidak naik, berarti 2500 kkal belum surplus."},
+    {"date": "2026-10-24", "time": "06:30", "cond": "Standar (pagi)", "standard": true,
+     "weight": 67.5, "lean": 53.9, "smm": 30.0, "fat": 13.6, "bf": 20.1, "waist": 83.8, "tee": 2362,
+     "note": "Baru 5 hari di 2650 kkal, jadi belum bisa menilai kalori baru. Berat +0,2 kg dalam 2 minggu (≈0,1 kg/minggu, masih di bawah target). Lean −0,2 kg vs 10-10 (noise), tapi −1,3 kg vs baseline dengan arah yang konsisten; lemak torso 7,43 kg, visceral fat level 10 (dari 9). Pola ini cocok dengan asupan aktual ±2100–2200 kkal yang di bawah maintenance. Kalori tetap 2650, dinilai dari rata-rata berat pagi dan lingkar perut meteran per 2 minggu."}
   ]
 }
