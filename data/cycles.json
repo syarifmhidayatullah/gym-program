@@ -55,18 +55,18 @@
       "version": "B",
       "weeks": [
         {"type": "build", "loads": {
-          "squat-heavy": {"kg": 70},
-          "bench-heavy": {"kg": 67.5, "sets": "5×3"},
-          "dead-heavy": {"kg": 100},
-          "squat-light": {"kg": 60},
-          "bench-volume": {"kg": 57.5}
+          "squat-heavy": {"kg": 70, "result": "ok"},
+          "bench-heavy": {"kg": 67.5, "sets": "5×3", "result": "ok"},
+          "dead-heavy": {"kg": 100, "result": "ok"},
+          "squat-light": {"kg": 60, "result": "ok"},
+          "bench-volume": {"kg": 57.5, "result": "8,8,8,7"}
         }},
         {"type": "build", "loads": {
           "squat-heavy": {"kg": 72.5},
           "bench-heavy": {"kg": 67.5, "sets": "5×4"},
           "dead-heavy": {"kg": 102.5},
           "squat-light": {"kg": 60},
-          "bench-volume": {"kg": 57.5, "note": "60 kg kalau 4×8 minggu lalu tuntas"}
+          "bench-volume": {"kg": 57.5, "note": "tahan: minggu 6 masih 8,8,8,7"}
         }},
         {"type": "build", "loads": {
           "squat-heavy": {"kg": 75},
@@ -85,26 +85,26 @@
         {"type": "deload", "note": "Beban deload dihitung dari log minggu 9."}
       ],
       "loads": {
-        "sen-rdl": {"load": "65 kg", "target": "3×8"},
-        "sen-legpress": {"as": "Hack Squat", "load": "35 kg", "target": "3×8–10"},
-        "sen-legcurl": {"load": "pin berikutnya di atas 70 kg", "target": "3×10–12"},
+        "sen-rdl": {"load": "67,5 kg", "target": "3×8"},
+        "sen-legpress": {"as": "Hack Squat", "load": "35 kg (tahan)", "target": "3×10 dulu"},
+        "sen-legcurl": {"load": "77 kg (tahan)", "target": "3×10 dulu"},
         "sen-calf": {"load": "40 kg (tahan)", "target": "4×15 dulu"},
-        "sen-abd": {"load": "63 kg (tahan)", "target": "3×15 dulu"},
-        "sen-add": {"load": "pin berikutnya di atas 23 kg", "target": "3×15"},
-        "sel-row": {"as": "T-Bar Row", "load": "35 kg plate", "target": "4×6–8"},
-        "sel-incline": {"load": "22,5 kg/tangan", "target": "3×8–10"},
-        "sel-pulldown": {"as": "Lat Pulldown", "load": "54 kg (tahan)", "target": "3×10 dulu"},
-        "sel-lateral": {"load": "8 kg/tangan (atau 9 kg, target 12)", "target": "3×12–15"},
-        "sel-curl": {"as": "Bayesian Cable Curl", "load": "14 kg, set lurus (bukan piramida)", "target": "3×10–12"},
-        "sel-ohe": {"as": "Triceps Overhead (rope)", "load": "32 kg (tahan)", "target": "3×10 dulu"},
-        "kam-bss": {"load": "10 kg/tangan (tahan)", "target": "3×10 per kaki dulu"},
+        "sen-abd": {"load": "pin berikutnya di atas 63 kg", "target": "3×15"},
+        "sen-add": {"load": "pin berikutnya di atas 29 kg", "target": "3×15"},
+        "sel-row": {"as": "T-Bar Row", "load": "40 kg plate", "target": "4×6–8"},
+        "sel-incline": {"load": "22,5 kg/tangan (tahan)", "target": "3×10 dulu"},
+        "sel-pulldown": {"as": "Lat Pulldown", "load": "pin berikutnya di atas 54 kg", "target": "3×8–10"},
+        "sel-lateral": {"load": "8 kg/tangan (tahan)", "target": "3×15 dulu"},
+        "sel-curl": {"as": "Bayesian Cable Curl", "load": "pin berikutnya di atas 14 kg, set lurus", "target": "3×10–12"},
+        "sel-ohe": {"as": "Triceps Overhead (rope)", "load": "32 kg (tahan)", "target": "3×12 dulu"},
+        "kam-bss": {"load": "12 kg/tangan (atau 12,5)", "target": "3×8–10 per kaki"},
         "kam-legext": {"load": "63 kg (tahan)", "target": "3×15 dulu"},
         "kam-calf": {"load": "45 kg", "target": "3×12–15"},
-        "jum-ohp": {"load": "20 kg/tangan", "target": "3×8–10"},
-        "jum-csrow": {"as": "Machine Row (chest-supported)", "load": "pin berikutnya di atas 40 kg", "target": "3×8–10"},
+        "jum-ohp": {"load": "20 kg/tangan (tahan)", "target": "3×8 dulu; set 3 masih 6 → balik 17,5 kg 3×10"},
+        "jum-csrow": {"as": "Machine Row (chest-supported)", "load": "42,5 kg (tahan)", "target": "3×10 dulu"},
         "jum-pulldown": {"load": "50 kg (tahan)", "target": "3×10–12"},
         "jum-reardelt": {"load": "pin berikutnya di atas 45 kg", "target": "3×12–15"},
-        "jum-curl": {"load": "10 kg/tangan (tahan)", "target": "set 3 minimal 10 rep"},
+        "jum-curl": {"load": "10 kg/tangan (tahan)", "target": "3×12 dulu"},
         "jum-pushdown": {"load": "pin berikutnya di atas 18 kg", "target": "3×10–12"},
         "pause-squat": {"load": "55 kg", "target": "3×3, enteng"},
         "paused-bench": {"load": "52,5 kg", "target": "3×3, enteng"},
@@ -115,7 +115,8 @@
         "Squat minggu 9 (77,5 kg) dan deadlift minggu 9 (107,5 kg) melewati beban tertinggi siklus 1.",
         "Bench volume: double progression. Naik 2,5 kg hanya setelah 4×8 tuntas.",
         "Bench volume (57,5–62,5 kg ≈ 76–82% e1RM) dan squat Kamis (60–62,5 kg ≈ 71–74%) sedikit di atas rentang % template karena dibangun dari beban aktual siklus 1. Tetap sah selama set terakhir berat tapi aman; kalau set terakhir mentok, tahan beban.",
-        "Aturan naik/tahan mingguan tetap berlaku: set terakhir mentok → tahan; gagal dua minggu berturut-turut → turun 5–10%."
+        "Aturan naik/tahan mingguan tetap berlaku: set terakhir mentok → tahan; gagal dua minggu berturut-turut → turun 5–10%.",
+        "Minggu 6 (26-10): semua lift utama tuntas sesuai rencana; bench volume 57,5 kg 8,8,8,7 → tahan di minggu 7. Rasa per set tidak tercatat. Beban aksesori di atas sudah diperbarui dari log minggu 6."
       ]
     }
   ],
