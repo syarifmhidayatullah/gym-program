@@ -76,13 +76,23 @@
           "bench-volume": {"kg": 60, "result": "8,8,7,6"}
         }},
         {"type": "build", "loads": {
-          "squat-heavy": {"kg": 75, "note": "tahan: minggu 8 set 5 cuma 4 rep (rencana awal 77,5 kg)"},
-          "bench-heavy": {"kg": 70, "sets": "5×3"},
-          "dead-heavy": {"kg": 107.5},
-          "squat-light": {"kg": 62.5},
-          "bench-volume": {"kg": 60, "note": "tahan: minggu 8 baru 8,8,7,6"}
+          "squat-heavy": {"kg": 75, "note": "tahan: minggu 8 set 5 cuma 4 rep (rencana awal 77,5 kg)", "result": "5,3,5,5,5"},
+          "bench-heavy": {"kg": 70, "sets": "5×3", "result": "ok"},
+          "dead-heavy": {"kg": 107.5, "result": "ok"},
+          "squat-light": {"kg": 62.5, "result": "ok"},
+          "bench-volume": {"kg": 60, "note": "tahan: minggu 8 baru 8,8,7,6", "result": "8,8,8,6"}
         }},
-        {"type": "deload", "note": "Beban deload dihitung dari log minggu 9."}
+        {"type": "deload",
+         "note": "Set dipotong, beban ±65% e1RM. Semua set lift utama harus enteng. Tambahan malam (pull-up/push-up) juga setengah set.",
+         "acc": "Aksesori: 2 set per latihan, beban sama, berhenti 3–4 rep sebelum gagal.",
+         "skip": ["Sabtu"],
+         "loads": {
+          "squat-heavy": {"kg": 57.5, "sets": "3×5"},
+          "bench-heavy": {"kg": 52.5, "sets": "3×3"},
+          "dead-heavy": {"kg": 77.5, "sets": "2×3"},
+          "squat-light": {"kg": 47.5, "sets": "2×6"},
+          "bench-volume": {"kg": 47.5, "sets": "2×8"}
+        }}
       ],
       "loads": {
         "sen-rdl": {"load": "67,5 kg", "target": "3×8"},
@@ -118,12 +128,83 @@
         "Aturan naik/tahan mingguan tetap berlaku: set terakhir mentok → tahan; gagal dua minggu berturut-turut → turun 5–10%.",
         "Minggu 6 (26-10): semua lift utama tuntas sesuai rencana; bench volume 57,5 kg 8,8,8,7 → tahan di minggu 7. Rasa per set tidak tercatat. Beban aksesori diperbarui dari log minggu 6.",
         "Minggu 7 (02-11): semua lift utama tuntas, bench volume 57,5 kg 4×8 tuntas → 60 kg di minggu 8. Sabtu dilewati (urusan pagi), tidak diganti. Lower B 1 jam 47 menit, lewat dari jendela 90 menit. Rasa per set masih belum tercatat. Beban aksesori diperbarui dari log minggu 7.",
-        "Minggu 8 (09-11): squat 75 kg set 5 cuma 4 rep → tahan 75 kg di minggu 9 (bukan 77,5). Bench 67,5 kg 5×5, deadlift 105 kg, squat Kamis 62,5 kg tuntas. Bench volume 60 kg 8,8,7,6 → tahan. Log bench tertulis 67,2 kg, dianggap salah ketik 67,5. Hip abduction/adduction pindah ke Sabtu, tidak masalah. Rasa per set masih belum tercatat. Beban aksesori di atas diperbarui dari log minggu 8."
+        "Minggu 8 (09-11): squat 75 kg set 5 cuma 4 rep → tahan 75 kg di minggu 9 (bukan 77,5). Bench 67,5 kg 5×5, deadlift 105 kg, squat Kamis 62,5 kg tuntas. Bench volume 60 kg 8,8,7,6 → tahan. Log bench tertulis 67,2 kg, dianggap salah ketik 67,5. Hip abduction/adduction pindah ke Sabtu, tidak masalah. Rasa per set masih belum tercatat. Beban aksesori diperbarui dari log minggu 8.",
+        "Minggu 9 (16-11): squat 75 kg 5,3,5,5,5 (set 2 gagal; Syarif istirahat antar set terlalu lama di squat dan deadlift). Bench 70 kg 5×3, deadlift 107,5 kg 4×3, squat Kamis 62,5 kg tuntas. Bench volume 60 kg 8,8,8,6. Lat pulldown Selasa diganti pull-up bodyweight 10,8,7."
+      ]
+    },
+    {
+      "start": "2026-11-30",
+      "version": "B",
+      "weeks": [
+        {"type": "build", "loads": {
+          "squat-heavy": {"kg": 70, "sets": "5×5"},
+          "bench-heavy": {"kg": 70, "sets": "5×4"},
+          "dead-heavy": {"kg": 105},
+          "squat-light": {"kg": 62.5},
+          "bench-volume": {"kg": 60}
+        }},
+        {"type": "build", "loads": {
+          "squat-heavy": {"kg": 72.5, "sets": "5×5"},
+          "bench-heavy": {"kg": 70, "sets": "5×5"},
+          "dead-heavy": {"kg": 107.5},
+          "squat-light": {"kg": 62.5},
+          "bench-volume": {"kg": 60, "note": "62,5 kg kalau 4×8 minggu lalu tuntas"}
+        }},
+        {"type": "build", "loads": {
+          "squat-heavy": {"kg": 75, "sets": "5×4"},
+          "bench-heavy": {"kg": 72.5, "sets": "5×3"},
+          "dead-heavy": {"kg": 110},
+          "squat-light": {"kg": 65},
+          "bench-volume": {"kg": 62.5, "note": "tetap 60 kg kalau belum 4×8"}
+        }},
+        {"type": "build", "loads": {
+          "squat-heavy": {"kg": 77.5, "sets": "5×3"},
+          "bench-heavy": {"kg": 72.5, "sets": "5×4"},
+          "dead-heavy": {"kg": 112.5},
+          "squat-light": {"kg": 65},
+          "bench-volume": {"kg": 62.5, "note": "naik 2,5 kg hanya setelah 4×8"}
+        }},
+        {"type": "deload", "note": "Beban deload dihitung dari log minggu 14."}
+      ],
+      "loads": {
+        "sen-rdl": {"load": "70 kg", "target": "3×8"},
+        "sen-legpress": {"as": "Hack Squat", "load": "45 kg (tahan)", "target": "3×10 dulu"},
+        "sen-legcurl": {"load": "77 kg (tahan)", "target": "3×12 dulu"},
+        "sen-calf": {"load": "40 kg (tahan)", "target": "4×15 dulu"},
+        "sen-abd": {"load": "pin berikutnya di atas 70 kg (boleh di Sabtu)", "target": "3×15"},
+        "sen-add": {"load": "36 kg (tahan, boleh di Sabtu)", "target": "3×15 dulu"},
+        "sel-row": {"as": "T-Bar Row", "load": "45 kg plate", "target": "4×6–8"},
+        "sel-incline": {"load": "22,5 kg/tangan (tahan)", "target": "3×10 dulu"},
+        "sel-pulldown": {"as": "Pull-up (atau Lat Pulldown 59 kg)", "load": "bodyweight", "target": "3×8–10; naik ke 3×10 lalu tambah beban 2,5 kg"},
+        "sel-lateral": {"load": "8 kg/tangan (tahan)", "target": "3×15 dulu"},
+        "sel-curl": {"as": "Bayesian Cable Curl", "load": "18 kg (tahan), set lurus", "target": "3×12 dulu"},
+        "sel-ohe": {"as": "Triceps Overhead (rope)", "load": "32 kg (tahan)", "target": "3×12 dulu"},
+        "kam-bss": {"load": "15 kg/tangan (tahan)", "target": "3×10 per kaki dulu"},
+        "kam-legext": {"load": "63 kg (tahan)", "target": "3×15 dulu; dipotong ke 2 set kalau mepet"},
+        "kam-calf": {"load": "45 kg", "target": "3×12–15"},
+        "jum-ohp": {"load": "20 kg/tangan (tahan)", "target": "3×8–10; minggu 11 masih 9,8,7 → 17,5 kg 3×10–12"},
+        "jum-csrow": {"as": "Machine Row (chest-supported)", "load": "45 kg (tahan)", "target": "3×10 dulu"},
+        "jum-pulldown": {"load": "50 kg (tahan)", "target": "3×12 dulu"},
+        "jum-reardelt": {"load": "52 kg (tahan)", "target": "3×15 dulu"},
+        "jum-curl": {"load": "12 kg/tangan", "target": "3×8–12 (rentang dilebarkan karena lompatan dumbbell 20%); pergelangan kiri terasa → kembali 10 kg"},
+        "jum-pushdown": {"load": "23 kg (tahan)", "target": "3×12 dulu"},
+        "pause-squat": {"load": "57,5 kg", "target": "3×3, enteng"},
+        "paused-bench": {"load": "55 kg", "target": "3×3, enteng"},
+        "speed-dead": {"load": "75 kg", "target": "5×2, enteng"}
+      },
+      "notes": [
+        "e1RM dari siklus 2: squat 75 × 5 ≈ 87,5 kg · bench 67,5 × 5 ≈ 79 kg · deadlift 107,5 × 3 ≈ 118 kg.",
+        "Squat: 5×5 di beban teratas gagal satu set di tiga kesempatan (72,5 kg siklus 1, 75 kg minggu 8 dan 9). 75 kg 5×5 ≈ 86% e1RM, terlalu berat untuk 5×5. Siklus 3 mulai 70 kg (≈80%) lalu rep diturunkan saat beban naik: 5×5 → 5×5 → 5×4 → 5×3. Minggu 14 77,5 kg 5×3 jadi rekor baru.",
+        "Bench tidak mundur: lanjut tangga rep dari 70 kg 5×3 yang sudah tuntas (70 kg 5×4 → 5×5 → 72,5 kg 5×3 → 5×4).",
+        "Deadlift tuntas sepanjang siklus 2 → mundur satu langkah ke 105 kg lalu naik sampai 112,5 kg.",
+        "Istirahat lift utama 3–4 menit, maksimal 5 menit. Lebih lama dari itu badan mulai dingin dan sesi molor dari jendela 90 menit.",
+        "Aturan naik/tahan mingguan tetap berlaku: set terakhir mentok → tahan; gagal dua minggu berturut-turut → turun 5–10%."
       ]
     }
   ],
   "e1rm": [
     {"date": "2026-09-19", "S": 85, "B": 75, "D": 115, "from": "log awal: bench 60 kg 7,7,5,5 · deadlift 100 kg 4,4,3 · squat 70 kg 5×5. Sengaja sedikit konservatif."},
-    {"date": "2026-10-17", "S": 85, "B": 76, "D": 112.5, "from": "log siklus 1 minggu 4: squat 72,5 × 5 · bench 65 × 5 · deadlift 102,5 × 3. Deadlift 4×3 tidak dibawa sampai mentok, jadi angka formulanya cenderung di bawah kemampuan asli."}
+    {"date": "2026-10-17", "S": 85, "B": 76, "D": 112.5, "from": "log siklus 1 minggu 4: squat 72,5 × 5 · bench 65 × 5 · deadlift 102,5 × 3. Deadlift 4×3 tidak dibawa sampai mentok, jadi angka formulanya cenderung di bawah kemampuan asli."},
+    {"date": "2026-11-21", "S": 87.5, "B": 79, "D": 118, "from": "log siklus 2: squat 75 × 5 (minggu 9, set 3–5) · bench 67,5 × 5 (minggu 8) · deadlift 107,5 × 3 (minggu 9). Bench 70 × 3 ≈ 77 kg, jadi angka bench diambil dari minggu 8."}
   ]
 }
