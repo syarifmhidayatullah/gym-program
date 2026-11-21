@@ -129,7 +129,7 @@
         "Minggu 6 (26-10): semua lift utama tuntas sesuai rencana; bench volume 57,5 kg 8,8,8,7 → tahan di minggu 7. Rasa per set tidak tercatat. Beban aksesori diperbarui dari log minggu 6.",
         "Minggu 7 (02-11): semua lift utama tuntas, bench volume 57,5 kg 4×8 tuntas → 60 kg di minggu 8. Sabtu dilewati (urusan pagi), tidak diganti. Lower B 1 jam 47 menit, lewat dari jendela 90 menit. Rasa per set masih belum tercatat. Beban aksesori diperbarui dari log minggu 7.",
         "Minggu 8 (09-11): squat 75 kg set 5 cuma 4 rep → tahan 75 kg di minggu 9 (bukan 77,5). Bench 67,5 kg 5×5, deadlift 105 kg, squat Kamis 62,5 kg tuntas. Bench volume 60 kg 8,8,7,6 → tahan. Log bench tertulis 67,2 kg, dianggap salah ketik 67,5. Hip abduction/adduction pindah ke Sabtu, tidak masalah. Rasa per set masih belum tercatat. Beban aksesori diperbarui dari log minggu 8.",
-        "Minggu 9 (16-11): squat 75 kg 5,3,5,5,5 (set 2 gagal; Syarif istirahat antar set terlalu lama di squat dan deadlift). Bench 70 kg 5×3, deadlift 107,5 kg 4×3, squat Kamis 62,5 kg tuntas. Bench volume 60 kg 8,8,8,6. Lat pulldown Selasa diganti pull-up bodyweight 10,8,7."
+        "Minggu 9 (16-11): squat 75 kg 5,3,5,5,5 (set 2 gagal). Squat dan deadlift dikerjakan dengan jeda terlalu lama antar repetisi, jadi setnya mirip cluster set dan hasilnya sedikit lebih mudah dari 5×5 / 4×3 sebenarnya. Bench 70 kg 5×3, deadlift 107,5 kg 4×3, squat Kamis 62,5 kg tuntas. Bench volume 60 kg 8,8,8,6. Lat pulldown Selasa diganti pull-up bodyweight 10,8,7."
       ]
     },
     {
@@ -197,7 +197,7 @@
         "Squat: 5×5 di beban teratas gagal satu set di tiga kesempatan (72,5 kg siklus 1, 75 kg minggu 8 dan 9). 75 kg 5×5 ≈ 86% e1RM, terlalu berat untuk 5×5. Siklus 3 mulai 70 kg (≈80%) lalu rep diturunkan saat beban naik: 5×5 → 5×5 → 5×4 → 5×3. Minggu 14 77,5 kg 5×3 jadi rekor baru.",
         "Bench tidak mundur: lanjut tangga rep dari 70 kg 5×3 yang sudah tuntas (70 kg 5×4 → 5×5 → 72,5 kg 5×3 → 5×4).",
         "Deadlift tuntas sepanjang siklus 2 → mundur satu langkah ke 105 kg lalu naik sampai 112,5 kg.",
-        "Istirahat lift utama 3–4 menit, maksimal 5 menit. Lebih lama dari itu badan mulai dingin dan sesi molor dari jendela 90 menit.",
+        "Jeda antar repetisi: squat 1–3 napas di atas (±3–5 detik) lalu brace dan turun; deadlift reset di lantai 1–3 detik, jangan berdiri lama memegang bar di atas. Karena siklus 2 dikerjakan dengan jeda antar rep yang lebih panjang, e1RM squat dan deadlift siklus 2 kemungkinan sedikit terlalu tinggi; awal siklus 3 bisa terasa lebih berat dari biasanya.",
         "Aturan naik/tahan mingguan tetap berlaku: set terakhir mentok → tahan; gagal dua minggu berturut-turut → turun 5–10%."
       ]
     }
@@ -205,6 +205,6 @@
   "e1rm": [
     {"date": "2026-09-19", "S": 85, "B": 75, "D": 115, "from": "log awal: bench 60 kg 7,7,5,5 · deadlift 100 kg 4,4,3 · squat 70 kg 5×5. Sengaja sedikit konservatif."},
     {"date": "2026-10-17", "S": 85, "B": 76, "D": 112.5, "from": "log siklus 1 minggu 4: squat 72,5 × 5 · bench 65 × 5 · deadlift 102,5 × 3. Deadlift 4×3 tidak dibawa sampai mentok, jadi angka formulanya cenderung di bawah kemampuan asli."},
-    {"date": "2026-11-21", "S": 87.5, "B": 79, "D": 118, "from": "log siklus 2: squat 75 × 5 (minggu 9, set 3–5) · bench 67,5 × 5 (minggu 8) · deadlift 107,5 × 3 (minggu 9). Bench 70 × 3 ≈ 77 kg, jadi angka bench diambil dari minggu 8."}
+    {"date": "2026-11-21", "S": 87.5, "B": 79, "D": 118, "from": "log siklus 2, squat & deadlift dengan jeda antar rep yang panjang (kemungkinan sedikit terlalu tinggi): squat 75 × 5 (minggu 9, set 3–5) · bench 67,5 × 5 (minggu 8) · deadlift 107,5 × 3 (minggu 9). Bench 70 × 3 ≈ 77 kg, jadi angka bench diambil dari minggu 8."}
   ]
 }
